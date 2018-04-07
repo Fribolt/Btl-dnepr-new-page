@@ -1,0 +1,26 @@
+.logo {
+  display: block;
+  padding: 40px 0;
+  max-width: 260px;
+  margin: 20px auto;
+  text-indent: -99999px;
+  background: url("../images/LOGO.png") center no-repeat;
+  background-size: 100%;
+
+  &-container {
+    margin: 20px 0;
+  }
+}
+
+.header {
+
+
+  &-phone {
+    display: block;
+    margin: 20px 0 20px 0;
+    text-align: right;
+    color: #1a57a8;
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
