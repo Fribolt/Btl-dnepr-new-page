@@ -1,0 +1,44 @@
+.clients {
+
+  &-list {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  &-item {
+    width: 342px;
+    height: 300px;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+
+    .flipper {
+      position: relative;
+      transition: 1.6s;
+      transform-style: preserve-3d;
+      transform-origin: center 160px;
+
+      &:hover {
+        transform: rotateY(180deg);
+      }
+    }
+
+    .front,
+    .back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 342px;
+      height: 300px;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      background: url(../images/1.png) 0px 0 no-repeat;
+      background-size: 100%;
+    }
+
+     .back {
+      background: red;
+       transform: rotateY(180deg);
+    }
+  }
+}

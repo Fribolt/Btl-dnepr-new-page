@@ -1,12 +1,18 @@
+@import "variables";
 
+@import 'general.scss';
 
 @import 'elements/header.scss';
 @import 'elements/footer.scss';
 
 @import 'sections/banner.scss';
+@import 'sections/feature.scss';
+@import 'sections/howItWork.scss';
+@import 'sections/map.scss';
+@import 'sections/clients.scss';
+@import 'sections/contacts.scss';
 
 @import 'UI/buttons.scss';
 @import 'UI/navigation.scss';
 
-@import 'general.scss';
 

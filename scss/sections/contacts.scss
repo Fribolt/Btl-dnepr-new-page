@@ -1,0 +1,48 @@
+.contacts {
+  padding-bottom: 50px;
+  color: #fff;
+  background-color: #0c4ca3;
+
+  h2 {
+    color: #fff;
+  }
+
+  .flex-container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .flex-item {
+    h3 {
+      font-size: 30px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    
+    p {
+      font-size: 30px;
+    }
+
+    a {
+      display: block;
+      font-weight: 700;
+      font-size: 36px;
+      color: #fff;
+    }
+
+    .phone {
+      margin: 35px 0 70px 0;
+      padding: 0 80px;
+      background: url(../images/callback-bg.png) left center no-repeat;
+      background-size: 55px;
+    }
+
+    .email {
+      text-align: center;
+      font-weight: normal;
+      font-size: 30px;
+    }
+  }
+
+
+}

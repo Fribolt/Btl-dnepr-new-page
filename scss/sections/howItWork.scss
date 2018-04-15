@@ -1,0 +1,41 @@
+.how-it-work {
+  padding-bottom: 40px;
+  background-color: #59bc55;
+
+  h2 {
+    color: #fff;
+  }
+
+  &-list {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &-item {
+    position: relative;
+    margin: 5px;
+    padding-top: 160px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: $brand-color-text;
+  }
+
+  .questionnaires {
+    background: url("../images/questionnaires.png") top no-repeat;
+  }
+
+  .research {
+    background: url("../images/research.png") top no-repeat;
+  }
+
+  .data {
+    background: url("../images/data.png") top no-repeat;
+  }
+
+  .recommendations   {
+    background: url("../images/recommendations.png") top no-repeat;
+  }
+
+}

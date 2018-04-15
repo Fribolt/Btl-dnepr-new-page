@@ -9,3 +9,12 @@ a {
     text-decoration: none;
   }
 }
+
+h2 {
+  margin: 40px 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 36px;
+  color: $brand-color-text;
+}

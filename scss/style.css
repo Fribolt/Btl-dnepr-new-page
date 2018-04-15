@@ -1,7 +1,23 @@
+body {
+  font-family: 'MyriadProRegular' , sans-serif; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    text-decoration: none; }
+
+h2 {
+  margin: 40px 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 36px;
+  color: #0c4ca3; }
+
 .logo {
   display: block;
-  padding: 40px 0;
   max-width: 260px;
+  padding: 40px 0;
   margin: 20px auto;
   text-indent: -99999px;
   background: url("../images/LOGO.png") center no-repeat;
@@ -13,9 +29,14 @@
   display: block;
   margin: 20px 0 20px 0;
   text-align: right;
-  color: #1a57a8;
+  font-weight: 700;
   font-size: 24px;
-  font-weight: 700; }
+  color: #0c4ca3; }
+
+.footer {
+  background-color: #59bc55; }
+  .footer .logo {
+    background: url("../images/logo-footer.png") center no-repeat; }
 
 .banner {
   min-height: 524px;
@@ -32,12 +53,133 @@
     margin-bottom: 180px;
     font-size: 26px; }
 
+.feature {
+  padding-bottom: 40px; }
+  .feature-list {
+    padding: 0;
+    margin: 0;
+    list-style: none; }
+  .feature-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 25px;
+    font-weight: 700;
+    font-size: 19px;
+    color: #0c4ca3; }
+    .feature-item:before {
+      content: '';
+      display: block;
+      border: 3px solid #1a57a8;
+      border-radius: 50%;
+      background-color: white;
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 17px;
+      height: 17px;
+      z-index: 108; }
+
+.how-it-work {
+  padding-bottom: 40px;
+  background-color: #59bc55; }
+  .how-it-work h2 {
+    color: #fff; }
+  .how-it-work-list {
+    display: flex;
+    justify-content: space-around; }
+  .how-it-work-item {
+    position: relative;
+    margin: 5px;
+    padding-top: 160px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #0c4ca3; }
+  .how-it-work .questionnaires {
+    background: url("../images/questionnaires.png") top no-repeat; }
+  .how-it-work .research {
+    background: url("../images/research.png") top no-repeat; }
+  .how-it-work .data {
+    background: url("../images/data.png") top no-repeat; }
+  .how-it-work .recommendations {
+    background: url("../images/recommendations.png") top no-repeat; }
+
+.map {
+  background-color: #dfd7d7; }
+  .map img {
+    width: 100%;
+    max-width: 1200px;
+    display: block;
+    margin: 0 auto; }
+
+.clients-list {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap; }
+.clients-item {
+  width: 342px;
+  height: 300px;
+  -webkit-perspective: 1000;
+  perspective: 1000; }
+  .clients-item .flipper {
+    position: relative;
+    transition: 1.6s;
+    transform-style: preserve-3d;
+    transform-origin: center 160px; }
+    .clients-item .flipper:hover {
+      transform: rotateY(180deg); }
+  .clients-item .front,
+  .clients-item .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 342px;
+    height: 300px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: url(../images/1.png) 0px 0 no-repeat;
+    background-size: 100%; }
+  .clients-item .back {
+    background: red;
+    transform: rotateY(180deg); }
+
+.contacts {
+  padding-bottom: 50px;
+  color: #fff;
+  background-color: #0c4ca3; }
+  .contacts h2 {
+    color: #fff; }
+  .contacts .flex-container {
+    display: flex;
+    justify-content: space-around; }
+  .contacts .flex-item h3 {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 700; }
+  .contacts .flex-item p {
+    font-size: 30px; }
+  .contacts .flex-item a {
+    display: block;
+    font-weight: 700;
+    font-size: 36px;
+    color: #fff; }
+  .contacts .flex-item .phone {
+    margin: 35px 0 70px 0;
+    padding: 0 80px;
+    background: url(../images/callback-bg.png) left center no-repeat;
+    background-size: 55px; }
+  .contacts .flex-item .email {
+    text-align: center;
+    font-weight: normal;
+    font-size: 30px; }
+
 .button {
   text-transform: uppercase;
   font-size: 16px; }
   .button-container {
     width: 211px;
-    margin: 180px 0 40px 0;
+    margin-bottom: 40px;
     border-radius: 9px;
     background-color: #55b659;
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75); }
@@ -70,13 +212,5 @@
     color: #272727;
     font-size: 14px;
     text-transform: uppercase; }
-
-body {
-  font-family: 'MyriadProRegular' , sans-serif; }
-
-a {
-  text-decoration: none; }
-  a:hover {
-    text-decoration: none; }
 
 /*# sourceMappingURL=style.css.map */
