@@ -1,18 +1,23 @@
 body {
   font-family: 'MyriadProRegular' , sans-serif; }
+  body .active {
+    opacity: 1;
+    pointer-events: auto; }
+  body h2 {
+    margin: 40px 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 36px;
+    color: #0c4ca3; }
 
 a {
   text-decoration: none; }
   a:hover {
     text-decoration: none; }
 
-h2 {
-  margin: 40px 0;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 36px;
-  color: #0c4ca3; }
+p {
+  margin: 0; }
 
 .logo {
   display: block;
@@ -76,8 +81,7 @@ h2 {
       left: 0;
       top: 5px;
       width: 17px;
-      height: 17px;
-      z-index: 108; }
+      height: 17px; }
 
 .how-it-work {
   padding-bottom: 40px;
@@ -100,18 +104,148 @@ h2 {
     background: url("../images/questionnaires.png") top no-repeat; }
   .how-it-work .research {
     background: url("../images/research.png") top no-repeat; }
+  .how-it-work .promoter {
+    background: url("../images/promoter.png") center -12px no-repeat;
+    background-size: 157px; }
   .how-it-work .data {
     background: url("../images/data.png") top no-repeat; }
   .how-it-work .recommendations {
     background: url("../images/recommendations.png") top no-repeat; }
 
+#vmap {
+  margin: 0 auto; }
+
+#jqvmap1_21_pin {
+  margin-left: -9%;
+  margin-top: -3%; }
+
+#jqvmap1_26_pin {
+  margin-left: -8%;
+  margin-top: -4%; }
+
+#jqvmap1_77_pin {
+  margin-left: -10%;
+  margin-top: -4%; }
+
+#jqvmap1_46_pin {
+  margin-left: -9%;
+  margin-top: -3%; }
+
+#jqvmap1_61_pin {
+  margin-left: -9%;
+  margin-top: -3%; }
+
+#jqvmap1_68_pin {
+  margin-left: -9%;
+  margin-top: -3%; }
+
+#jqvmap1_105_pin {
+  margin-left: -9%;
+  margin-top: -3%; }
+
+#jqvmap1_107_pin {
+  margin-left: -9%;
+  margin-top: -3%; }
+
+#jqvmap1_56_pin {
+  margin-left: -9%;
+  margin-top: -1%; }
+
+#jqvmap1_18_pin {
+  margin-left: -8%;
+  margin-top: -2%; }
+
+#jqvmap1_32_pin {
+  margin-left: -9%;
+  margin-top: -1%; }
+
+#jqvmap1_74_pin {
+  margin-left: -9%;
+  margin-top: -3%; }
+
+#jqvmap1_71_pin {
+  margin-left: -8%;
+  margin-top: -3%; }
+
+#jqvmap1_59_pin {
+  margin-left: -8%;
+  margin-top: -2%; }
+
+#jqvmap1_53_pin {
+  margin-left: -8%;
+  margin-top: -4%; }
+
+#jqvmap1_63_pin {
+  margin-left: -8%;
+  margin-top: -4%; }
+
+#jqvmap1_12_pin {
+  margin-left: -11%;
+  margin-top: -3%; }
+
+#jqvmap1_23_pin {
+  margin-left: -8%;
+  margin-top: -4%; }
+
+#jqvmap1_35_pin {
+  margin-left: -8%;
+  margin-top: -4%; }
+
+#jqvmap1_51_pin {
+  margin-left: -6%;
+  margin-top: -3%; }
+
+#jqvmap1_48_pin {
+  margin-left: -8%;
+  margin-top: -3%; }
+
+#jqvmap1_65_pin {
+  margin-left: -9%;
+  margin-top: -2%; }
+
+.jqvmap-pin {
+  pointer-events: none; }
+
+.pin {
+  pointer-events: none;
+  position: relative;
+  display: block;
+  color: #fff; }
+  .pin:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background-color: #fff;
+    transform: translateX(-50%); }
+
 .map {
-  background-color: #dfd7d7; }
-  .map img {
-    width: 100%;
-    max-width: 1200px;
-    display: block;
-    margin: 0 auto; }
+  position: relative;
+  padding: 10px;
+  text-align: center;
+  background-color: #e9e9e9; }
+  .map .vmap {
+    padding-top: 60px; }
+  .map .amount-promoter {
+    position: absolute;
+    top: -181px;
+    width: 2px;
+    height: 200px;
+    color: #000;
+    background-color: #000; }
+    .map .amount-promoter .info {
+      position: absolute;
+      margin: 0; }
+      .map .amount-promoter .info p:first-child {
+        background-color: yellow; }
+      .map .amount-promoter .info p:last-child {
+        background-color: #4CA1FF; }
+  .map .active-promoter {
+    display: block; }
 
 .clients-list {
   position: relative;
@@ -160,14 +294,6 @@ h2 {
   .clients .client--shcedro .back .customer-logo {
     background: url(../images/1.png) center no-repeat;
     background-size: 100%; }
-.clients .client--shcedro .front {
-  background: url(../images/1.png) 0 0 no-repeat;
-  background-size: 100%; }
-.clients .client--shcedro .back {
-  background-color: red; }
-  .clients .client--shcedro .back .customer-logo {
-    background: url(../images/1.png) center no-repeat;
-    background-size: 100%; }
 .clients .client--market .front {
   background: url(../images/2.png) 0 0 no-repeat;
   background-size: 100%; }
@@ -208,24 +334,22 @@ h2 {
   .clients .client--farming .back .customer-logo {
     background: url(../images/6.png) center no-repeat;
     background-size: 100%; }
-.clients .client--antoshka .front {
+.clients .client--meat .front {
   background: url(../images/7.png) 0 0 no-repeat;
+  background-size: 102%; }
+.clients .client--meat .back {
+  background-color: red; }
+  .clients .client--meat .back .customer-logo {
+    background: url(../images/7.png) center no-repeat;
+    background-size: 100%; }
+.clients .client--antoshka .front {
+  background: url(../images/8.png) 0 0 no-repeat;
   background-size: 100%; }
 .clients .client--antoshka .back {
   background-color: red; }
   .clients .client--antoshka .back .customer-logo {
-    background: url(../images/7.png) center no-repeat;
+    background: url(../images/8.png) center no-repeat;
     background-size: 100%; }
-.clients .more-work {
-  width: 100%;
-  height: 100px;
-  border: none;
-  outline: none;
-  font-weight: 700;
-  font-family: 'Montserrat', sans-serif;
-  color: #8e8e8e;
-  text-transform: uppercase;
-  background-color: #f5f5f5; }
 
 .contacts {
   padding-bottom: 50px;
@@ -262,10 +386,10 @@ h2 {
   font-size: 16px; }
   .button-container {
     width: 211px;
-    margin-bottom: 40px;
+    height: 64px;
     border-radius: 9px;
     background-color: #55b659;
-    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75); }
+    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.75); }
     .button-container a {
       position: relative;
       display: block;
@@ -295,5 +419,154 @@ h2 {
     color: #272727;
     font-size: 14px;
     text-transform: uppercase; }
+
+.pop-up-client {
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transition: 1s; }
+  .pop-up-client .flex-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between; }
+  .pop-up-client .client-header {
+    background-color: #fff; }
+    .pop-up-client .client-header .logo {
+      margin: 0;
+      padding: 40px 70px; }
+    .pop-up-client .client-header .menu-list {
+      margin-top: 35px; }
+      .pop-up-client .client-header .menu-list .menu-item {
+        padding: 5px 15px; }
+
+.main-content.flex-container {
+  justify-content: flex-end; }
+.main-content .client-information {
+  max-width: 470px;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 16px;
+  color: #0c4ca3; }
+  .main-content .client-information .title-list {
+    margin-bottom: 20px;
+    text-align: left;
+    color: #ef4136; }
+    .main-content .client-information .title-list h1,
+    .main-content .client-information .title-list p {
+      margin: 0; }
+    .main-content .client-information .title-list h1 {
+      font-weight: 700;
+      font-size: 34px; }
+    .main-content .client-information .title-list p {
+      font-size: 26px; }
+  .main-content .client-information p {
+    margin: 0 0 70px 0; }
+  .main-content .client-information ul {
+    margin-bottom: 40px; }
+.main-content .logo-client {
+  width: 680px;
+  height: 600px;
+  background: url(../images/7.png) center no-repeat;
+  background-size: 100%; }
+.main-content .buttons {
+  padding: 38px 0; }
+  .main-content .buttons .prev,
+  .main-content .buttons .next {
+    position: relative;
+    border: none;
+    outline: none;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    background-color: #fff; }
+    .main-content .buttons .prev:before,
+    .main-content .buttons .next:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 10px;
+      height: 10px;
+      top: 7px;
+      left: -10px;
+      transform: rotate(45deg);
+      border-bottom: #000 1px solid;
+      border-left: #000 1px solid; }
+  .main-content .buttons .next:before {
+    left: 109px;
+    border: none;
+    border-right: #000 1px solid;
+    border-top: #000 1px solid; }
+  .main-content .buttons .button-close {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border: none;
+    outline: none;
+    background-color: #000; }
+    .main-content .buttons .button-close:after, .main-content .buttons .button-close:before {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 10px;
+      left: -1px;
+      width: 27px;
+      height: 5px;
+      background-color: #fff; }
+    .main-content .buttons .button-close:before {
+      transform: rotate(90deg); }
+
+.client-footer {
+  padding: 38px 0;
+  background-color: #0c4ca3; }
+  .client-footer .flex-item a {
+    display: block;
+    margin-bottom: 14px;
+    font-weight: 700;
+    font-size: 26px;
+    color: #fff; }
+  .client-footer .button-container {
+    background: #0d59c1;
+    border: 1px solid #fff;
+    box-shadow: none; }
+
+.shcedro .main-content .title-list {
+  color: #dc1625; }
+.shcedro .logo-client {
+  background: url(../images/1.png) center no-repeat; }
+
+.market .main-content .title-list {
+  color: #dc1625; }
+.market .logo-client {
+  background: url(../images/2.png) center no-repeat; }
+
+.tavriya .main-content .title-list {
+  color: #d57335; }
+.tavriya .logo-client {
+  background: url(../images/3.png) center no-repeat; }
+
+.bic .main-content .title-list {
+  color: #ffb636; }
+.bic .logo-client {
+  background: url(../images/4.png) center no-repeat; }
+
+.prostor .main-content .title-list {
+  color: #ed008c; }
+.prostor .logo-client {
+  background: url(../images/5.png) center no-repeat; }
+
+.farming .main-content .title-list {
+  color: #59bc55; }
+.farming .logo-client {
+  background: #59bc55 url(../images/6.png) center no-repeat; }
+
+.meat .main-content .title-list {
+  color: #ef4e22; }
+.meat .logo-client {
+  background: url(../images/7.png) center no-repeat; }
 
 /*# sourceMappingURL=style.css.map */

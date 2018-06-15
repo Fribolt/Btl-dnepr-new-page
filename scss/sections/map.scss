@@ -1,10 +1,160 @@
-.map {
-  background-color: #dfd7d7;
+#vmap {
+  margin: 0 auto;
+}
 
-  img {
-    width: 100%;
-    max-width: 1200px;
+#jqvmap1_21_pin {
+  margin-left: -9%;
+  margin-top: -3%;
+}
+
+#jqvmap1_26_pin {
+  margin-left: -8%;
+  margin-top: -4%;
+}
+
+#jqvmap1_77_pin {
+  margin-left: -10%;
+  margin-top: -4%;
+}
+
+#jqvmap1_46_pin {
+  margin-left: -9%;
+  margin-top: -3%;
+}
+#jqvmap1_61_pin {
+  margin-left: -9%;
+  margin-top: -3%;
+}
+
+#jqvmap1_68_pin {
+  margin-left: -9%;
+  margin-top: -3%;
+}
+
+#jqvmap1_105_pin {
+  margin-left: -9%;
+  margin-top: -3%;
+}
+#jqvmap1_107_pin {
+  margin-left: -9%;
+  margin-top: -3%;
+}
+
+#jqvmap1_56_pin {
+  margin-left: -9%;
+  margin-top: -1%;
+}
+#jqvmap1_18_pin {
+  margin-left: -8%;
+  margin-top: -2%;
+}
+
+#jqvmap1_32_pin {
+  margin-left: -9%;
+  margin-top: -1%;
+}
+
+#jqvmap1_74_pin {
+  margin-left: -9%;
+  margin-top: -3%;
+}
+#jqvmap1_71_pin {
+  margin-left: -8%;
+  margin-top: -3%;
+}
+#jqvmap1_59_pin {
+  margin-left: -8%;
+  margin-top: -2%;
+}
+#jqvmap1_53_pin {
+  margin-left: -8%;
+  margin-top: -4%;
+}
+#jqvmap1_63_pin {
+  margin-left: -8%;
+  margin-top: -4%;
+}
+#jqvmap1_12_pin {
+  margin-left: -11%;
+  margin-top: -3%;
+}
+#jqvmap1_23_pin {
+  margin-left: -8%;
+  margin-top: -4%;
+}
+#jqvmap1_35_pin {
+  margin-left: -8%;
+  margin-top: -4%;
+}
+#jqvmap1_51_pin {
+  margin-left: -6%;
+  margin-top: -3%;
+}
+#jqvmap1_48_pin {
+  margin-left: -8%;
+  margin-top: -3%;
+}
+#jqvmap1_65_pin {
+  margin-left: -9%;
+  margin-top: -2%;
+}
+.jqvmap-pin {
+  pointer-events: none;
+}
+
+.pin {
+  pointer-events: none;
+  position: relative;
+  display: block;
+  color: #fff;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background-color: #fff;
+    transform: translateX(-50%);
+  }
+}
+
+.map {
+  position: relative;
+  padding: 10px;
+  text-align: center;
+  background-color: #e9e9e9;
+
+  .vmap {
+    padding-top: 60px;
+  }
+
+  .amount-promoter {
+    position: absolute;
+    top: -181px;
+    width: 2px;
+    height: 200px;
+    color: #000;
+    background-color: #000;
+
+    .info {
+      position: absolute;
+      margin: 0;
+
+      p:first-child {
+        background-color: yellow;
+      }
+
+      p:last-child {
+        background-color: #4CA1FF ;
+      }
+    }
+  }
+
+  .active-promoter {
     display: block;
-    margin: 0 auto;
   }
 }

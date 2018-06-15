@@ -13,9 +13,213 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <link rel="stylesheet" href="scss/style.css">
+
     <link rel="stylesheet" href="scss/fonts.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
 
+    <link href="scss/jqvmap.css" rel="stylesheet">
+
+    <script src="https://yastatic.net/jquery/2.1.4/jquery.min.js"></script>
+
+    <script type="text/javascript" src="js/jquery.vmap.js"></script>
+    <script type="text/javascript" src="js/jquery.vmap.ukraine.js" charset="utf-8"></script>
+
+
+
+    <script>
+        var west = ['21','46','105','26','77','68','61','56','107'],
+            north = ['18','32','74','71','35'],
+            east = ['59','53','63','12','23'],
+            south = ['51','48','65'];
+
+        isWestRegion = function (region, code) {
+            return region.includes(code);
+        };
+
+        isNorthRegion = function (region, code) {
+            return region.includes(code);
+        };
+
+        isEastRegion = function (region, code) {
+            return region.includes(code);
+        };
+
+        isSouthRegion = function (region, code) {
+            return region.includes(code);
+        };
+
+        setDefaultColor = function () {
+            jQuery('#vmap').vectorMap('set', 'colors',
+                {
+                    '21': '#143257',
+                    '46': '#143257',
+                    '105': '#143257',
+                    '26': '#143257',
+                    '77': '#143257',
+                    '68': '#143257',
+                    '61': '#143257',
+                    '56': '#143257',
+                    '107': '#143257',
+                    '18': '#143257',
+                    '32': '#143257',
+                    '74': '#143257',
+                    '71': '#143257',
+                    '35': '#143257',
+                    '59': '#143257',
+                    '53': '#143257',
+                    '63': '#143257',
+                    '12': '#143257',
+                    '23': '#143257',
+                    '51': '#143257',
+                    '48': '#143257',
+                    '65': '#143257'
+                }
+            );
+        };
+
+        highLightWest = function () {
+            jQuery('#vmap').vectorMap('set', 'colors',
+                {
+                    '21': '#feda00',
+                    '46': '#feda00',
+                    '105': '#feda00',
+                    '26': '#feda00',
+                    '77': '#feda00',
+                    '68': '#feda00',
+                    '61': '#feda00',
+                    '56': '#feda00',
+                    '107': '#feda00'
+                }
+            );
+        };
+
+        highLightNorth = function () {
+            jQuery('#vmap').vectorMap('set', 'colors',
+                {
+                    '18': '#81cef3',
+                    '32': '#81cef3',
+                    '74': '#81cef3',
+                    '71': '#81cef3',
+                    '35': '#81cef3'
+                }
+            );
+        };
+
+        highLightEast = function () {
+            jQuery('#vmap').vectorMap('set', 'colors',
+                {
+                    '59': '#52ae47',
+                    '53': '#52ae47',
+                    '63': '#52ae47',
+                    '12': '#52ae47',
+                    '23': '#52ae47'
+                }
+            );
+        };
+
+        highLightSouth = function () {
+            jQuery('#vmap').vectorMap('set', 'colors',
+                {
+                    '51': '#dd2626',
+                    '48': '#dd2626',
+                    '65': '#dd2626'
+                }
+            );
+        };
+
+        higlightCurrentRegion = function (code) {
+            isWestRegion(west, code) && highLightWest();
+            isNorthRegion(north, code) && highLightNorth();
+            isEastRegion(east, code) && highLightEast();
+            isSouthRegion(south, code) && highLightSouth();
+        };
+
+        function escapeXml(string) {
+            return string.replace(/[<>]/g, function (c) {
+                switch (c) {
+                    case '<': return '\u003c';
+                    case '>': return '\u003e';
+                }
+            });
+        }
+
+        var pins = {
+            21: escapeXml('<div class="pin">Ужгород</div>'),
+            26: escapeXml('<div class="pin">Ивано-Франковск</div>'),
+            77: escapeXml('<div class="pin">Черновцы</div>'),
+            46: escapeXml('<div class="pin">Львов</div>'),
+            61: escapeXml('<div class="pin">Тернополь</div>'),
+            68: escapeXml('<div class="pin">Хмельницк</div>'),
+            107: escapeXml('<div class="pin">Луцк</div>'),
+            105: escapeXml('<div class="pin">Винница</div>'),
+            56: escapeXml('<div class="pin">Ровно</div>'),
+            18: escapeXml('<div class="pin">Житомир</div>'),
+            32: escapeXml('<div class="pin">Киев</div>'),
+            74: escapeXml('<div class="pin">Чернигов</div>'),
+            71: escapeXml('<div class="pin">Черкассы</div>'),
+            35: escapeXml('<div class="pin">Кировогорад</div>'),
+            59: escapeXml('<div class="pin">Суммы</div>'),
+            53: escapeXml('<div class="pin">Полтава</div>'),
+            63: escapeXml('<div class="pin">Харьков</div>'),
+            12: escapeXml('<div class="pin">Днепр</div>'),
+            23: escapeXml('<div class="pin">Запорожье</div>'),
+            51: escapeXml('<div class="pin">Одесса</div>'),
+            48: escapeXml('<div class="pin">Никола</div>'),
+            65: escapeXml('<div class="pin">Херсон</div>')
+        }
+
+        jQuery(document).ready(function () {
+
+            var map  = $('#vmap');
+
+            map.vectorMap({
+                map: 'ukraine_ua',
+                backgroundColor: '#e9e9e9',
+                borderColor: '#fff',
+                color: '#143257',
+                colors: {
+                    '43': 'silver',
+                    '09': 'silver',
+                    '14': 'silver',
+                },
+                hoverColor: null,
+                selectedColor: null,
+                enableZoom: true,
+                showTooltip: true,
+                pinMode: 'content',
+                pins: pins,
+                onRegionOver: function(event, code, region) {
+                    // console.log(code);
+                    higlightCurrentRegion(code);
+
+                    if (isWestRegion(west, code)) {
+                        createMapElemens('#jqvmap1_46_pin .pin',"amount-promoter","info",825);
+                    } else if (isNorthRegion(north, code)){
+                        createMapElemens('#jqvmap1_32_pin .pin',"amount-promoter","info",924);
+                    } else if (isEastRegion(east, code)){
+                        createMapElemens('#jqvmap1_63_pin .pin',"amount-promoter","info",1024);
+                    } else if (isSouthRegion(south, code)){
+                        createMapElemens('#jqvmap1_65_pin .pin',"amount-promoter","info",800);
+                    }
+                },
+                onRegionOut: function() {
+                    setDefaultColor();
+
+                    deleteElement('.amount-promoter');
+                }
+            });
+
+            function createMapElemens(selector,class1,class2,amountPromoter) {
+               var element = $(selector).append('<div class="'+class1+'"><div class="' + class2 + '"><p>Промоутеры</p><p>'+amountPromoter+'</p></div></div>');
+
+               return element;
+            }
+
+            function deleteElement(selector1) {
+                $(selector1).remove();
+            }
+        });
+    </script>
 </head>
 <body>
 <header class="header">
@@ -27,12 +231,12 @@
             <div class="col-md-7 col-lg-7">
                 <nav class="menu">
                     <ul class="menu-list">
-                        <li class="menu-item"><a href="">главная</a></li>
-                        <li class="menu-item"><a href="">о нас</a></li>
-                        <li class="menu-item"><a href="">как мы работаем</a></li>
-                        <li class="menu-item"><a href="">покрытие</a></li>
-                        <li class="menu-item"><a href="">наши клиенты</a></li>
-                        <li class="menu-item"><a href="">контакты</a></li>
+                        <li class="menu-item"><a href="#banner">главная</a></li>
+                        <li class="menu-item"><a href="#feature">о нас</a></li>
+                        <li class="menu-item"><a href="#how-it-work">как мы работаем</a></li>
+                        <li class="menu-item"><a href="#map">покрытие</a></li>
+                        <li class="menu-item"><a href="#clients">наши клиенты</a></li>
+                        <li class="menu-item"><a href="#clients">контакты</a></li>
                     </ul>
                 </nav>
             </div>
@@ -43,12 +247,12 @@
     </div>
 </header>
 <section class="banner">
+    <p><a name="banner"></a></p>
     <div class="container">
         <div class="row">
             <div class="col-md-offset-1 col-lg-offset-1">
                 <h1 class="banner-title">Проводим Полевые маркетинговые исследования</h1>
-                <!-- todo rename class - add more association -->
-                <p class="banner-item">Принимайте эффективные маркетинговые решения <br>основанные на данных о поведении Вашей целевой аудитории</p>
+                <p class="banner-item">Принимайте эффективные маркетинговые решения, <br>основанные на данных о поведении Вашей целевой аудитории</p>
             </div>
             <div class="col-md-offset-8 col-lg-offset-8">
                 <!-- todo  remove link -->
@@ -60,14 +264,15 @@
     </div>
 </section>
 <section class="feature">
+    <p><a name="feature"></a></p>
     <div class="container">
         <div class="row">
-            <h2>Что мы делаем</h2>
+            <h2>Что мы делаем:</h2>
             <div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
                 <ul class="feature-list">
                     <li class="feature-item">Анкетирование и опросы потребителей</li>
                     <li class="feature-item">Исследования и опросы в В2В<br>(продавцы, менеджеры и др. специалитсы)</li>
-                    <li class="feature-item">Глубинные интервью, Фокус-группы, Тестинг новинок<br>исследования восприятия дизайна этикетки, упаковки, вкуса, др </li>
+                    <li class="feature-item">Глубинные интервью, Фокус-группы, Тестинг новинок,<br>исследование восприятия дизайна этикетки, упаковки, вкуса, др. </li>
                     <li class="feature-item">Ценовые мониторинги  и мониторинг ассортимента конкурентов/партнеров</li>
                     <li class="feature-item">Подсчет трафика целевой аудитории  в интересующих локациях</li>
                     <li class="feature-item">Исследование потребительского поведения  и предпочтений в торговых точках</li>
@@ -77,24 +282,178 @@
     </div>
 </section>
 <section class="how-it-work">
+    <p><a name="how-it-work"></a></p>
     <div class="container">
         <div class="row">
             <h2>как мы работаем</h2>
             <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
                 <div class="how-it-work-list">
-                    <div class="how-it-work-item questionnaires">Разработка анкеты</div>
                     <div class="how-it-work-item research">Разработка методики исследования</div>
+                    <div class="how-it-work-item questionnaires">Разработка материалов для проведения исследования</div>
+                    <div class="how-it-work-item promoter">Проведения исследования, контроль достоверности данных</div>
                     <div class="how-it-work-item data">Математическая интерпретация данных</div>
-                    <div class="how-it-work-item recommendations">Отчеты и рекомендации</div>
+                    <div class="how-it-work-item recommendations">Выводы, отчеты и рекомендации</div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <section class="map">
-        <img src="images/Map.gif" alt="Map">
+    <h2>региональная структура агентства</h2>
+
+    <div class="vmap" id="vmap" style="width: 1325px; height: 625px;"></div>
+</section>
+<section class="clients">
+    <p><a name="clients"></a></p>
+    <h2>наши клиенты</h2>
+    <div class="clients-list">
+        <div id="client-1"  class="clients-item client--shcedro">
+            <div class="business-card">
+                <div class="front"></div>
+                <div class="back">
+                    <div class="customer-logo"></div>
+                    <div class="customer-information">
+                        <p>География: <span>Киев, Днепр, Львов.</span></p>
+                        <p>Количество респондентов: <span>450.</span></p>
+                        <p>Вопросов в анкете: <span>7</span></p>
+                        <p>Скорость заполнения анкеты: <span>5 минут.</span></p>
+                        <p>Разработка анкеты.</p>
+                        <p>Математическая интерпретация данных.</p>
+                        <p>Подготовка сводного отчета.</p>
+                        <p>Стоимость заполненной анкеты: <span>114 грн с НДС.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="client-2"  class="clients-item client--market">
+            <div class="business-card">
+                <div class="front"></div>
+                <div class="back">
+                    <div class="customer-logo"></div>
+                    <div class="customer-information">
+                        <p>География: <span>Днепропетровская область.</span></p>
+                        <p>Количество респондентов: <span>967.</span></p>
+                        <p>Вопросов в анкете: <span>31</span></p>
+                        <p>Скорость заполнения анкеты: <span>14 минут.</span></p>
+                        <p>Разработка анкеты.</p>
+                        <p>Математическая интерпретация данных.</p>
+                        <p>Подготовка сводного отчета.</p>
+                        <p>Стоимость заполненной анкеты: <span>11 грн с НДС.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="client-3" class="clients-item client--tavriya">
+            <div class="business-card">
+                <div class="front"></div>
+                <div class="back">
+                    <div class="customer-logo"></div>
+                    <div class="customer-information">
+                        <p>География: <span>Киев, Днепр.</span></p>
+                        <p>Количество респондентов: <span>160.</span></p>
+                        <p>Вопросов в анкете: <span>11</span></p>
+                        <p>Скорость заполнения анкеты: <span>6 минут.</span></p>
+                        <p>Разработка анкеты.</p>
+                        <p>Математическая интерпретация данных.</p>
+                        <p>Подготовка сводного отчета.</p>
+                        <p>Стоимость заполненной анкеты: <span>27 грн с НДС.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="client-4"  class="clients-item client--bic">
+            <div class="business-card">
+                <div class="front"></div>
+                <div class="back">
+                    <div class="customer-logo"></div>
+                    <div class="customer-information">
+                        <p>Количество респондентов: <span>6000.</span></p>
+                        <p>Вопросов в анкете: <span>15</span></p>
+                        <p>Скорость заполнения анкеты: <span>5 минут.</span></p>
+                        <p>Разработка анкеты.</p>
+                        <p>Математическая интерпретация данных.</p>
+                        <p>Подготовка сводного отчета.</p>
+                        <p>Стоимость заполненной анкеты: <span>19 грн с НДС.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="client-5"  class="clients-item client--prostor">
+            <div class="business-card ">
+                <div class="front"></div>
+                <div class="back">
+                    <div class="customer-logo"></div>
+                    <div class="customer-information">
+                        <p>География: <span>19 городов.</span></p>
+                        <p>Количество респондентов: <span>5000.</span></p>
+                        <p>Вопросов в анкете: <span>8</span></p>
+                        <p>Скорость заполнения анкеты: <span>3 минут.</span></p>
+                        <p>Разработка анкеты.</p>
+                        <p>Математическая интерпретация данных.</p>
+                        <p>Подготовка сводного отчета.</p>
+                        <p>Стоимость заполненной анкеты: <span>15 грн с НДС.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="client-6"  class="clients-item client--farming">
+            <div class="business-card">
+                <div class="front"></div>
+                <div class="back">
+                    <div class="customer-logo"></div>
+                    <div class="customer-information">
+                        <p>География: <span>Днепр.</span></p>
+                        <p>Количество респондентов: <span>800.</span></p>
+                        <p>Вопросов в анкете: <span>8</span></p>
+                        <p>Скорость заполнения анкеты: <span>8 минут.</span></p>
+                        <p>Разработка анкеты.</p>
+                        <p>Математическая интерпретация данных.</p>
+                        <p>Подготовка сводного отчета.</p>
+                        <p>Стоимость заполненной анкеты: <span>15 грн с НДС.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="client-7"  class="clients-item client--meat">
+            <div class="business-card">
+                <div class="front"></div>
+                <div class="back">
+                    <div class="customer-logo"></div>
+                    <div class="customer-information">
+                        <p>География: <span>Днепр, Камянский, Новомосковск.</span></p>
+                        <p>Количество респондентов: <span>1600.</span></p>
+                        <p>Вопросов в анкете: <span>23</span></p>
+                        <p>Скорость заполнения анкеты: <span>8 минут.</span></p>
+                        <p>Разработка анкеты.</p>
+                        <p>Математическая интерпретация данных.</p>
+                        <p>Подготовка сводного отчета.</p>
+                        <p>Стоимость заполненной анкеты: <span>29 грн с НДС.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="client-8"  class="clients-item client--antoshka">
+            <div class="business-card">
+                <div class="front"></div>
+                <div class="back">
+                    <div class="customer-logo"></div>
+                    <div class="customer-information">
+                        <p>География: <span>Киев, Днепр, Львов.</span></p>
+                        <p>Количество респондентов: <span>450.</span></p>
+                        <p>Вопросов в анкете: <span>7</span></p>
+                        <p>Скорость заполнения анкеты: <span>5 минут.</span></p>
+                        <p>Разработка анкеты.</p>
+                        <p>Математическая интерпретация данных.</p>
+                        <p>Подготовка сводного отчета.</p>
+                        <p>Стоимость заполненной анкеты: <span>15 грн с НДС.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <section class="contacts">
+    <p><a name="clients"></a></p>
     <div class="container">
         <h2>контакты</h2>
         <div class="flex-container">
@@ -111,160 +470,480 @@
         </div>
     </div>
 </section>
-<section class="clients">
-        <h2>наши клиенты</h2>
-        <div class="clients-list">
-            <div class="clients-item client--shcedro">
-                <div class="business-card">
-                    <div class="front"></div>
-                    <div class="back">
-                        <div class="customer-logo"></div>
-                        <div class="customer-information">
-                            <p>География: <span>Киев, Днепр, Львов.</span></p>
-                            <p>Количество респондентов: <span>450.</span></p>
-                            <p>Вопросов в анкете: <span>7</span></p>
-                            <p>Скорость заполнения анкеты: <span>5 минут.</span></p>
-                            <p>Разработка анкеты.</p>
-                            <p>Математическая интерпретация данных.</p>
-                            <p>Подготовка сводного отчета.</p>
-                            <p>Стоимость заполненной анкеты: <span>15 грн с НДС.</span></p>
-                        </div>
-                    </div>
-                </div>
+<section id="pop-up-client-1" class="pop-up-client shcedro">
+    <div class="container">
+        <header class="client-header">
+            <div class="flex-container">
+                <a href="" class="logo">BTL-DNEPR</a>
+                <nav>
+                    <ul class="menu-list flex-container">
+                        <li class="menu-item"><a href="">home</a></li>
+                        <li class="menu-item"><a href="">about</a></li>
+                        <li class="menu-item"><a href="">contact</a></li>
+                    </ul>
+                </nav>
             </div>
-            <div class="clients-item client--market">
-                <div class="business-card">
-                    <div class="front"></div>
-                    <div class="back">
-                        <div class="customer-logo"></div>
-                        <div class="customer-information">
-                            <p>География: <span>Киев, Днепр, Львов.</span></p>
-                            <p>Количество респондентов: <span>450.</span></p>
-                            <p>Вопросов в анкете: <span>7</span></p>
-                            <p>Скорость заполнения анкеты: <span>5 минут.</span></p>
-                            <p>Разработка анкеты.</p>
-                            <p>Математическая интерпретация данных.</p>
-                            <p>Подготовка сводного отчета.</p>
-                            <p>Стоимость заполненной анкеты: <span>15 грн с НДС.</span></p>
-                        </div>
+        </header>
+        <section class="main-content">
+            <div class="flex-container">
+                <div class="client-information">
+                    <div class="title-list">
+                        <h1>ТМ Щедро</h1>
                     </div>
+                    <p> Анкетирование при дегустации кетчупов вслепую без брендинга на материалах и продукции. </p>
+                    <ul>
+                        <li>География: Киев, Днепр, Львов.</li>
+                        <li>Количество респондентов: 450</li>
+                        <li>Кол-во вопросов в анкете: 7</li>
+                        <li>Скорость заполнения анкеты: 5 мин</li>
+                        <li>Стоимость заполненной анкеты: 114 грн с НДС (2017 год)</li>
+                    </ul>
+                    <h3>Виды работ:</h3>
+                    <ul>
+                        <li>Анкетирование в точках продаж</li>
+                        <li>Подготовка сводного отчета</li>
+                    </ul>
                 </div>
+                <div class="logo-client"></div>
             </div>
-            <div class="clients-item client--tavriya">
-                <div class="business-card">
-                    <div class="front"></div>
-                    <div class="back">
-                        <div class="customer-logo"></div>
-                        <div class="customer-information">
-                            <p>География: <span>Киев, Днепр.</span></p>
-                            <p>Количество респондентов: <span>160.</span></p>
-                            <p>Вопросов в анкете: <span>11</span></p>
-                            <p>Скорость заполнения анкеты: <span>6 минут.</span></p>
-                            <p>Разработка анкеты.</p>
-                            <p>Математическая интерпретация данных.</p>
-                            <p>Подготовка сводного отчета.</p>
-                            <p>Стоимость заполненной анкеты: <span>27 грн с НДС.</span></p>
-                        </div>
-                    </div>
+            <div class="buttons flex-container">
+                <button class="prev">previous project</button>
+                <button class="button-close"></button>
+                <button class="next">next project</button>
+            </div>
+        </section>
+    </div>
+    <footer class="client-footer">
+        <div class="container">
+            <div class="flex-container">
+                <div class="flex-item">
+                    <a class="phone" href="tel: +38 (067) 566 96 60">+38 (067) 566 96 60</a>
+                    <a class="email" href="mailto: info@btl-dnepr.ua">info@btl-dnepr.ua</a>
                 </div>
-            </div>
-            <div class="clients-item client--bic">
-                <div class="business-card">
-                    <div class="front"></div>
-                    <div class="back">
-                        <div class="customer-logo"></div>
-                        <div class="customer-information">
-                            <p>География: <span>Киев, Днепр, Львов.</span></p>
-                            <p>Количество респондентов: <span>450.</span></p>
-                            <p>Вопросов в анкете: <span>7</span></p>
-                            <p>Скорость заполнения анкеты: <span>5 минут.</span></p>
-                            <p>Разработка анкеты.</p>
-                            <p>Математическая интерпретация данных.</p>
-                            <p>Подготовка сводного отчета.</p>
-                            <p>Стоимость заполненной анкеты: <span>15 грн с НДС.</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="clients-item client--prostor">
-                <div class="business-card ">
-                    <div class="front"></div>
-                    <div class="back">
-                        <div class="customer-logo"></div>
-                        <div class="customer-information">
-                            <p>География: <span>Киев, Днепр, Львов.</span></p>
-                            <p>Количество респондентов: <span>450.</span></p>
-                            <p>Вопросов в анкете: <span>7</span></p>
-                            <p>Скорость заполнения анкеты: <span>5 минут.</span></p>
-                            <p>Разработка анкеты.</p>
-                            <p>Математическая интерпретация данных.</p>
-                            <p>Подготовка сводного отчета.</p>
-                            <p>Стоимость заполненной анкеты: <span>15 грн с НДС.</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="clients-item client--farming">
-                <div class="business-card">
-                    <div class="front"></div>
-                    <div class="back">
-                        <div class="customer-logo"></div>
-                        <div class="customer-information">
-                            <p>География: <span>Днепр.</span></p>
-                            <p>Количество респондентов: <span>800.</span></p>
-                            <p>Вопросов в анкете: <span>8</span></p>
-                            <p>Скорость заполнения анкеты: <span>8 минут.</span></p>
-                            <p>Разработка анкеты.</p>
-                            <p>Математическая интерпретация данных.</p>
-                            <p>Подготовка сводного отчета.</p>
-                            <p>Стоимость заполненной анкеты: <span>15 грн с НДС.</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="clients-item client--antoshka">
-                <div class="business-card">
-                    <div class="front"></div>
-                    <div class="back">
-                        <div class="customer-logo"></div>
-                        <div class="customer-information">
-                            <p>География: <span>Киев, Днепр, Львов.</span></p>
-                            <p>Количество респондентов: <span>450.</span></p>
-                            <p>Вопросов в анкете: <span>7</span></p>
-                            <p>Скорость заполнения анкеты: <span>5 минут.</span></p>
-                            <p>Разработка анкеты.</p>
-                            <p>Математическая интерпретация данных.</p>
-                            <p>Подготовка сводного отчета.</p>
-                            <p>Стоимость заполненной анкеты: <span>15 грн с НДС.</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="clients-item client--antoshka">
-                <div class="business-card">
-                    <div class="front"></div>
-                    <div class="back">
-                        <div class="customer-logo"></div>
-                        <div class="customer-information">
-                            <p>География: <span>Киев, Днепр, Львов.</span></p>
-                            <p>Количество респондентов: <span>450.</span></p>
-                            <p>Вопросов в анкете: <span>7</span></p>
-                            <p>Скорость заполнения анкеты: <span>5 минут.</span></p>
-                            <p>Разработка анкеты.</p>
-                            <p>Математическая интерпретация данных.</p>
-                            <p>Подготовка сводного отчета.</p>
-                            <p>Стоимость заполненной анкеты: <span>15 грн с НДС.</span></p>
-                        </div>
-                    </div>
+                <div class="button-container">
+                    <a class="button" href="">экспресс-консультация</a>
                 </div>
             </div>
         </div>
-        <button class="more-work">Load more work</button>
+    </footer>
+</section>
+<section id="pop-up-client-2" class="pop-up-client market">
+    <div class="container">
+        <header class="client1-header">
+            <div class="flex-container">
+                <a href="" class="logo">BTL-DNEPR</a>
+                <nav>
+                    <ul class="menu-list flex-container">
+                        <li class="menu-item"><a href="">home</a></li>
+                        <li class="menu-item"><a href="">about</a></li>
+                        <li class="menu-item"><a href="">contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="main-content">
+            <div class="flex-container">
+                <div class="client-information">
+                    <div class="title-list">
+                        <h1>«КОЛБАС МАРКЕТ»</h1>
+                        <p>Сеть магазинов</p>
+                    </div>
+                    <p>Опрос покупателей с целью определить предпочтения в потреблении категории колбасных изделий. </p>
+                    <ul>
+                        <li>География: Днепропетровская область </li>
+                        <li>Количество респондентов: 967</li>
+                        <li>Кол-во вопросов в анкете: 31</li>
+                        <li>Скорость заполнения анкеты: 14 мин</li>
+                        <li>Стоимость заполненной анкеты: 11 грн с НДС</li>
+                    </ul>
+                    <h3>Виды работ:</h3>
+                    <ul>
+                        <li>Разработка анкеты</li>
+                        <li>Проведение опроса в точках продаж</li>
+                        <li>Математическая интерпретация данных</li>
+                        <li>Подготовка сводного отчета</li>
+                    </ul>
+                </div>
+                <div class="logo-client"></div>
+            </div>
+            <div class="buttons flex-container">
+                <button class="prev">previous project</button>
+                <button class="button-close"></button>
+                <button class="next">next project</button>
+            </div>
+        </section>
+    </div>
+    <footer class="client-footer">
+        <div class="container">
+            <div class="flex-container">
+                <div class="flex-item">
+                    <a class="phone" href="tel: +38 (067) 566 96 60">+38 (067) 566 96 60</a>
+                    <a class="email" href="mailto: info@btl-dnepr.ua">info@btl-dnepr.ua</a>
+                </div>
+                <div class="button-container">
+                    <a class="button" href="">экспресс-консультация</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
+<section id="pop-up-client-3" class="pop-up-client tavriya">
+    <div class="container">
+        <header class="client-header">
+            <div class="flex-container">
+                <a href="" class="logo">BTL-DNEPR</a>
+                <nav>
+                    <ul class="menu-list flex-container">
+                        <li class="menu-item"><a href="">home</a></li>
+                        <li class="menu-item"><a href="">about</a></li>
+                        <li class="menu-item"><a href="">contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="main-content">
+            <div class="flex-container">
+                <div class="client-information">
+                    <div class="title-list">
+                        <h1>«Таврия» </h1>
+                        <p>Торговый дом</p>
+                    </div>
+                    <p>Тестирование восприятия этикеток в точках продаж для новой линейки вин.</p>
+                    <ul>
+                        <li>География: Киев, Днепр.</li>
+                        <li>Кол-во вопросов в анкете: 160</li>
+                        <li>Кол-во вопросов в анкете: 11</li>
+                        <li>Скорость заполнения анкеты: 6 мин</li>
+                        <li>Стоимость заполненной анкеты: 27 грн с НДС</li>
+                    </ul>
+                    <h3>Виды работ:</h3>
+                    <ul>
+                        <li>Разработка анкеты</li>
+                        <li>Проведение опроса в точках продаж</li>
+                        <li>Математическая интерпретация данных</li>
+                        <li>Подготовка сводного отчета</li>
+                    </ul>
+                </div>
+                <div class="logo-client"></div>
+            </div>
+            <div class="buttons flex-container">
+                <button class="prev">previous project</button>
+                <button class="button-close"></button>
+                <button class="next">next project</button>
+            </div>
+        </section>
+    </div>
+    <footer class="client-footer">
+        <div class="container">
+            <div class="flex-container">
+                <div class="flex-item">
+                    <a class="phone" href="tel: +38 (067) 566 96 60">+38 (067) 566 96 60</a>
+                    <a class="email" href="mailto: info@btl-dnepr.ua">info@btl-dnepr.ua</a>
+                </div>
+                <div class="button-container">
+                    <a class="button" href="">экспресс-консультация</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
+<section id="pop-up-client-4" class="pop-up-client bic">
+    <div class="container">
+        <header class="client-header">
+            <div class="flex-container">
+                <a href="" class="logo">BTL-DNEPR</a>
+                <nav>
+                    <ul class="menu-list flex-container">
+                        <li class="menu-item"><a href="">home</a></li>
+                        <li class="menu-item"><a href="">about</a></li>
+                        <li class="menu-item"><a href="">contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="main-content">
+            <div class="flex-container">
+                <div class="client-information">
+                    <div class="title-list">
+                        <h1>ТМ «BIC»</h1>
+                    </div>
+                    <p>Опрос с целью определения потребительских предпочтений и мотивации при выборе торговых точек для покупки канцтоваров. </p>
+                    <ul>
+                        <li>Количество респондентов: 6000</li>
+                        <li>Кол-во вопросов в анкете: 15</li>
+                        <li>Скорость заполнения анкеты: 5 мин</li>
+                        <li>Стоимость заполненной анкеты: 19 грн с НДС (2016 год)</li>
+                    </ul>
+                    <h3>Виды работ:</h3>
+                    <ul>
+                        <li>Разработка анкеты</li>
+                        <li>Математическая интерпретация данных</li>
+                        <li>Подготовка сводного отчета</li>
+                    </ul>
+                </div>
+                <div class="logo-client"></div>
+            </div>
+            <div class="buttons flex-container">
+                <button class="prev">previous project</button>
+                <button class="button-close"></button>
+                <button class="next">next project</button>
+            </div>
+        </section>
+    </div>
+    <footer class="client-footer">
+        <div class="container">
+            <div class="flex-container">
+                <div class="flex-item">
+                    <a class="phone" href="tel: +38 (067) 566 96 60">+38 (067) 566 96 60</a>
+                    <a class="email" href="mailto: info@btl-dnepr.ua">info@btl-dnepr.ua</a>
+                </div>
+                <div class="button-container">
+                    <a class="button" href="">экспресс-консультация</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
+<section id="pop-up-client-5" class="pop-up-client prostor">
+    <div class="container">
+        <header class="client-header">
+            <div class="flex-container">
+                <a href="" class="logo">BTL-DNEPR</a>
+                <nav>
+                    <ul class="menu-list flex-container">
+                        <li class="menu-item"><a href="">home</a></li>
+                        <li class="menu-item"><a href="">about</a></li>
+                        <li class="menu-item"><a href="">contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="main-content">
+            <div class="flex-container">
+                <div class="client-information">
+                    <div class="title-list">
+                        <h1>«ProStor»</h1>
+                        <p>Сеть магазинов</p>
+                    </div>
+                    <p>Еженедельный ценовой мониторинг конкурентов и опрос посетителей магазинов сети.</p>
+                    <ul>
+                        <li>География: 19 городов </li>
+                        <li>(Киевская, Днепропетровская, Харьковская,Полтавская, Донецкая, Хмельницкая,Одесская, Черновицкая обл.)</li>
+                        <li>Количество респондентов: 5000</li>
+                        <li>Кол-во вопросов в анкете: 8</li>
+                        <li>Скорость заполнения анкеты: 3 мин</li>
+                        <li>Стоимость заполненной анкеты: 15 грн с НДС (2015 год)</li>
+                    </ul>
+                    <h3>Виды работ:</h3>
+                    <ul>
+                        <li>Подготовка сводного отчета</li>
+                    </ul>
+                </div>
+                <div class="logo-client"></div>
+            </div>
+            <div class="buttons flex-container">
+                <button class="prev">previous project</button>
+                <button class="button-close"></button>
+                <button class="next">next project</button>
+            </div>
+        </section>
+    </div>
+    <footer class="client-footer">
+        <div class="container">
+            <div class="flex-container">
+                <div class="flex-item">
+                    <a class="phone" href="tel: +38 (067) 566 96 60">+38 (067) 566 96 60</a>
+                    <a class="email" href="mailto: info@btl-dnepr.ua">info@btl-dnepr.ua</a>
+                </div>
+                <div class="button-container">
+                    <a class="button" href="">экспресс-консультация</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
+<section id="pop-up-client-6" class="pop-up-client farming">
+    <div class="container">
+        <header class="client-header">
+            <div class="flex-container">
+                <a href="" class="logo">BTL-DNEPR</a>
+                <nav>
+                    <ul class="menu-list flex-container">
+                        <li class="menu-item"><a href="">home</a></li>
+                        <li class="menu-item"><a href="">about</a></li>
+                        <li class="menu-item"><a href="">contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="main-content">
+            <div class="flex-container">
+                <div class="client-information">
+                    <div class="title-list">
+                        <h1>Фермерское хозяйство</h1>
+                    </div>
+                    <p>Определить возможную емкость рынка мяса утки в сети супермаркетов Варус. </p>
+                    <ul>
+                        <li>География: Днепр. </li>
+                        <li>Количество респондентов: 800</li>
+                        <li>Кол-во вопросов в анкете: 8</li>
+                        <li>Скорость заполнения анкеты: 8 мин</li>
+                        <li>Стоимость заполненной анкеты: 15 грн с НДС</li>
+                    </ul>
+                    <h3>Виды работ:</h3>
+                    <ul>
+                        <li>Разработка анкеты</li>
+                        <li>Математическая интерпретация данных</li>
+                        <li>Подготовка сводного отчета</li>
+                    </ul>
+                </div>
+                <div class="logo-client"></div>
+            </div>
+            <div class="buttons flex-container">
+                <button class="prev">previous project</button>
+                <button class="button-close"></button>
+                <button class="next">next project</button>
+            </div>
+        </section>
+    </div>
+    <footer class="client-footer">
+        <div class="container">
+            <div class="flex-container">
+                <div class="flex-item">
+                    <a class="phone" href="tel: +38 (067) 566 96 60">+38 (067) 566 96 60</a>
+                    <a class="email" href="mailto: info@btl-dnepr.ua">info@btl-dnepr.ua</a>
+                </div>
+                <div class="button-container">
+                    <a class="button" href="">экспресс-консультация</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
+<section id="pop-up-client-7" class="pop-up-client meat">
+    <div class="container">
+        <header class="client-header">
+            <div class="flex-container">
+                <a href="" class="logo">BTL-DNEPR</a>
+                <nav>
+                    <ul class="menu-list flex-container">
+                        <li class="menu-item"><a href="">home</a></li>
+                        <li class="menu-item"><a href="">about</a></li>
+                        <li class="menu-item"><a href="">contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="main-content">
+            <div class="flex-container">
+                <div class="client-information">
+                    <div class="title-list">
+                        <h1>«Дом мяса»</h1>
+                        <p>Фирменная торговая сеть</p>
+                    </div>
+                    <p>Анкетирование с целью определения изменений потребительских предпочтений в категории мясных изделий</p>
+                    <ul>
+                        <li>География: Днепр, Камянский, Новомосковск, Павлоград. </li>
+                        <li>Количество респондентов: 1600</li>
+                        <li>Кол-во вопросов в анкете: 23</li>
+                        <li>Скорость заполнения анкеты: 8 мин</li>
+                        <li>Стоимость заполненной анкеты: 29 грн с НДС (2011 год)</li>
+                    </ul>
+                    <h3>Виды работ:</h3>
+                    <ul>
+                        <li>Разработка анкеты</li>
+                        <li>Математическая интерпретация данных</li>
+                        <li>Подготовка сводного отчета</li>
+                    </ul>
+                </div>
+                <div class="logo-client"></div>
+            </div>
+            <div class="buttons flex-container">
+                <button class="prev">previous project</button>
+                <button class="button-close"></button>
+                <button class="next">next project</button>
+            </div>
+        </section>
+    </div>
+    <footer class="client-footer">
+        <div class="container">
+            <div class="flex-container">
+                <div class="flex-item">
+                    <a class="phone" href="tel: +38 (067) 566 96 60">+38 (067) 566 96 60</a>
+                    <a class="email" href="mailto: info@btl-dnepr.ua">info@btl-dnepr.ua</a>
+                </div>
+                <div class="button-container">
+                    <a class="button" href="">экспресс-консультация</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
+<section id="pop-up-client-8" class="pop-up-client">
+    <div class="container">
+        <header class="client-header">
+            <div class="flex-container">
+                <a href="" class="logo">BTL-DNEPR</a>
+                <nav>
+                    <ul class="menu-list flex-container">
+                        <li class="menu-item"><a href="">home</a></li>
+                        <li class="menu-item"><a href="">about</a></li>
+                        <li class="menu-item"><a href="">contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="main-content">
+            <div class="flex-container">
+                <div class="client-information">
+                    <div class="title-list">
+                        <h1>Антошка</h1>
+                        <p>Сеть магазинов</p>
+                    </div>
+                    <p>Опрос родителей на детских площадках,с целью определения потребительских  предпочтений при выборе категорий детских игрушек. </p>
+                    <ul>
+                        <li>Количество респондентов: 1000</li>
+                        <li>Кол-во вопросов в анкете: 7</li>
+                        <li>Скорость заполнения анкеты: 5 мин</li>
+                        <li>Стоимость заполненной анкеты: 15 грн с НДС (2015 год)</li>
+                    </ul>
+                    <h3>Виды работ:</h3>
+                    <ul>
+                        <li>Подготовка сводного отчета</li>
+                        <li>Математическая интерпретация данных</li>
+                        <li>Разработка анкеты: нет, разрабатывал «Хавас»</li>
+                    </ul>
+                </div>
+                <div class="logo-client"></div>
+            </div>
+            <div class="buttons flex-container">
+                <button class="prev">previous project</button>
+                <button class="button-close"></button>
+                <button class="next">next project</button>
+            </div>
+        </section>
+    </div>
+    <footer class="client-footer">
+        <div class="container">
+            <div class="flex-container">
+                <div class="flex-item">
+                    <a class="phone" href="tel: +38 (067) 566 96 60">+38 (067) 566 96 60</a>
+                    <a class="email" href="mailto: info@btl-dnepr.ua">info@btl-dnepr.ua</a>
+                </div>
+                <div class="button-container">
+                    <a class="button" href="">экспресс-консультация</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </section>
 <footer class="footer">
     <div class="container">
         <a href="#" class="logo">BTL-DNEPR</a>
     </div>
 </footer>
+<script src="js/main.js"></script>
+
+
 </body>
 </html>

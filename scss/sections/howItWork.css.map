@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACE,eAAG;EACD,KAAK,EAAE,IAAI",
+"sources": ["howItWork.scss"],
+"names": [],
+"file": "howItWork.css"
+}

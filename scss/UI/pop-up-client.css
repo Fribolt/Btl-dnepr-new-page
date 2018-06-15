@@ -1,0 +1,23 @@
+.pop-up-client {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: red; }
+  .pop-up-client .flex-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between; }
+
+.client-header {
+  background-color: #fff; }
+  .client-header .logo {
+    margin: 0;
+    padding: 40px 70px; }
+  .client-header .menu-list {
+    margin-top: 35px; }
+    .client-header .menu-list .menu-item {
+      padding: 5px 15px; }
+
+/*# sourceMappingURL=pop-up-client.css.map */

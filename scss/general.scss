@@ -1,5 +1,19 @@
 body {
   font-family: 'MyriadProRegular' , sans-serif;
+
+  .active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  h2 {
+    margin: 40px 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 36px;
+    color: $brand-color-text;
+  }
 }
 
 a {
@@ -10,11 +24,6 @@ a {
   }
 }
 
-h2 {
-  margin: 40px 0;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 36px;
-  color: $brand-color-text;
+p {
+  margin: 0;
 }
