@@ -250,9 +250,9 @@ p {
 .clients-list {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-flow: row wrap;
-  max-width: 1370px;
+  max-width: 1030px;
   margin: 0 auto; }
 .clients-item {
   width: 342px;
@@ -287,12 +287,12 @@ p {
     text-align: left;
     color: #fff; }
 .clients .client--shcedro .front {
-  background: url(../images/1.png) 0 0 no-repeat;
+  background: red url(../images/1.png) center no-repeat;
   background-size: 100%; }
 .clients .client--shcedro .back {
   background-color: red; }
   .clients .client--shcedro .back .customer-logo {
-    background: url(../images/1.png) center no-repeat;
+    background: red url(../images/1.png) center no-repeat;
     background-size: 100%; }
 .clients .client--market .front {
   background: url(../images/2.png) 0 0 no-repeat;
@@ -537,7 +537,8 @@ p {
 .shcedro .main-content .title-list {
   color: #dc1625; }
 .shcedro .logo-client {
-  background: url(../images/1.png) center no-repeat; }
+  background: red url(../images/1.png) center no-repeat;
+  background-size: 100%; }
 
 .market .main-content .title-list {
   color: #dc1625; }
@@ -568,5 +569,10 @@ p {
   color: #ef4e22; }
 .meat .logo-client {
   background: url(../images/7.png) center no-repeat; }
+
+.antoshka .main-content .title-list {
+  color: #ef4e22; }
+.antoshka .logo-client {
+  background: #ef4136 url(../images/8.png) center no-repeat; }
 
 /*# sourceMappingURL=style.css.map */

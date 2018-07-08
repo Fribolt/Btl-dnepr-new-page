@@ -177,7 +177,8 @@
   }
 
   .logo-client {
-    background: url(../images/1.png) center no-repeat;
+    background: red url(../images/1.png) center no-repeat;
+    background-size: 100%;
   }
 }
 
@@ -250,6 +251,17 @@
 
   .logo-client {
     background: url(../images/7.png) center no-repeat;
+  }
+}
+.antoshka {
+  .main-content {
+    .title-list {
+      color: #ef4e22;
+    }
+  }
+
+  .logo-client {
+    background: #ef4136 url(../images/8.png) center no-repeat;
   }
 }
 

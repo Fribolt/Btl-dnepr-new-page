@@ -3,9 +3,9 @@
   &-list {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-flow: row wrap;
-    max-width: 1370px;
+    max-width: 1030px;
     margin: 0 auto;
   }
 
@@ -62,7 +62,7 @@
 
   .client--shcedro {
     .front {
-      background: url(../images/1.png) 0 0 no-repeat;
+      background: red url(../images/1.png) center no-repeat;
       background-size: 100%;
     }
 
@@ -70,7 +70,7 @@
       background-color: red;
       
       .customer-logo {
-        background: url(../images/1.png) center no-repeat;
+        background: red url(../images/1.png) center no-repeat;
         background-size: 100%;
       }
     }
