@@ -114,7 +114,7 @@
 
     .next {
       &:before {
-        left: 109px;
+        left: 100%;
         border: none;
         border-right: #000 1px solid;
         border-top: #000 1px solid;
@@ -190,7 +190,7 @@
   }
 
   .logo-client {
-    background: url(../images/2.png) center no-repeat;
+    background: #fff900 url(../images/2.png) center no-repeat;
   }
 }
 

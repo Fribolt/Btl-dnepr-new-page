@@ -93,24 +93,30 @@ p {
     justify-content: space-around; }
   .how-it-work-item {
     position: relative;
+    flex: 1;
     margin: 5px;
     padding-top: 160px;
     text-align: center;
     font-weight: 700;
     font-size: 20px;
     text-transform: uppercase;
-    color: #0c4ca3; }
+    color: #0c4ca3;
+    background-repeat: no-repeat;
+    background-position: top center; }
+    @media (max-width: 1200px) {
+      .how-it-work-item {
+        font-size: 14px; } }
   .how-it-work .questionnaires {
-    background: url("../images/questionnaires.png") top no-repeat; }
+    background-image: url("../images/questionnaires.png"); }
   .how-it-work .research {
-    background: url("../images/research.png") top no-repeat; }
+    background-image: url("../images/research.png"); }
   .how-it-work .promoter {
-    background: url("../images/promoter.png") center -12px no-repeat;
+    background-image: url("../images/promoter.png");
     background-size: 157px; }
   .how-it-work .data {
-    background: url("../images/data.png") top no-repeat; }
+    background-image: url("../images/data.png"); }
   .how-it-work .recommendations {
-    background: url("../images/recommendations.png") top no-repeat; }
+    background-image: url("../images/recommendations.png"); }
 
 #vmap {
   margin: 0 auto; }
@@ -229,7 +235,12 @@ p {
   text-align: center;
   background-color: #e9e9e9; }
   .map .vmap {
+    width: 1325px;
+    height: 625px;
     padding-top: 60px; }
+    @media (max-width: 1345px) {
+      .map .vmap {
+        display: none; } }
   .map .amount-promoter {
     position: absolute;
     top: -181px;
@@ -246,6 +257,51 @@ p {
         background-color: #4CA1FF; }
   .map .active-promoter {
     display: block; }
+  .map .static-map {
+    display: none; }
+    @media (max-width: 1345px) {
+      .map .static-map {
+        display: block;
+        width: 60%;
+        margin: 0 auto; } }
+  .map .quantity-promoters {
+    display: none; }
+    @media (max-width: 1345px) {
+      .map .quantity-promoters {
+        display: flex;
+        max-width: 850px;
+        margin: 0 auto 70px auto; } }
+    .map .quantity-promoters .promoter-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      margin: 0 5px;
+      text-align: right;
+      text-transform: uppercase;
+      font-weight: 700; }
+      .map .quantity-promoters .promoter-item .region,
+      .map .quantity-promoters .promoter-item .quantity {
+        width: 100%;
+        padding: 5px 10px; }
+      .map .quantity-promoters .promoter-item .icon {
+        width: 80%;
+        min-height: 140px;
+        margin: 40px 0; }
+      .map .quantity-promoters .promoter-item .region {
+        color: #fff; }
+      .map .quantity-promoters .promoter-item .quantity {
+        font-size: 16px;
+        color: #003057;
+        background-color: #80cff5; }
+      .map .quantity-promoters .promoter-item .west {
+        background: #ffec00; }
+      .map .quantity-promoters .promoter-item .north {
+        background: #003057; }
+      .map .quantity-promoters .promoter-item .east {
+        background: #e20613; }
+      .map .quantity-promoters .promoter-item .south {
+        background: #52ad31; }
 
 .clients-list {
   position: relative;
@@ -254,6 +310,9 @@ p {
   flex-flow: row wrap;
   max-width: 1030px;
   margin: 0 auto; }
+  @media (max-width: 1200px) {
+    .clients-list {
+      justify-content: center; } }
 .clients-item {
   width: 342px;
   height: 300px;
@@ -497,7 +556,7 @@ p {
       border-bottom: #000 1px solid;
       border-left: #000 1px solid; }
   .main-content .buttons .next:before {
-    left: 109px;
+    left: 100%;
     border: none;
     border-right: #000 1px solid;
     border-top: #000 1px solid; }
@@ -543,7 +602,7 @@ p {
 .market .main-content .title-list {
   color: #dc1625; }
 .market .logo-client {
-  background: url(../images/2.png) center no-repeat; }
+  background: #fff900 url(../images/2.png) center no-repeat; }
 
 .tavriya .main-content .title-list {
   color: #d57335; }
