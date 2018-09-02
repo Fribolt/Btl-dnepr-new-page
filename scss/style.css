@@ -286,7 +286,7 @@ p {
         padding: 5px 10px; }
       .map .quantity-promoters .promoter-item .icon {
         width: 80%;
-        min-height: 140px;
+        min-height: auto;
         margin: 40px 0; }
       .map .quantity-promoters .promoter-item .region {
         color: #fff; }
@@ -489,6 +489,8 @@ p {
   height: 100%;
   background-color: #fff;
   transition: 1s; }
+  .pop-up-client .container {
+    height: 100%; }
   .pop-up-client .flex-container {
     display: flex;
     flex-flow: row nowrap;
@@ -503,83 +505,96 @@ p {
       .pop-up-client .client-header .menu-list .menu-item {
         padding: 5px 15px; }
 
-.main-content.flex-container {
-  justify-content: flex-end; }
-.main-content .client-information {
-  max-width: 470px;
-  margin: 0 auto;
-  padding: 10px;
-  font-size: 16px;
-  color: #0c4ca3; }
-  .main-content .client-information .title-list {
-    margin-bottom: 20px;
-    text-align: left;
-    color: #ef4136; }
-    .main-content .client-information .title-list h1,
-    .main-content .client-information .title-list p {
-      margin: 0; }
-    .main-content .client-information .title-list h1 {
-      font-weight: 700;
-      font-size: 34px; }
-    .main-content .client-information .title-list p {
-      font-size: 26px; }
-  .main-content .client-information p {
-    margin: 0 0 70px 0; }
-  .main-content .client-information ul {
-    margin-bottom: 40px; }
-.main-content .logo-client {
-  width: 680px;
-  height: 600px;
-  background: url(../images/7.png) center no-repeat;
-  background-size: 100%; }
-.main-content .buttons {
-  padding: 38px 0; }
-  .main-content .buttons .prev,
-  .main-content .buttons .next {
-    position: relative;
-    border: none;
-    outline: none;
-    font-weight: 700;
+.main-content {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+  @media (max-width: 768px) {
+    .main-content .flex-container {
+      flex-flow: column-reverse nowrap; } }
+  .main-content .client-information {
+    max-width: 470px;
+    margin: 0 auto;
+    padding: 10px;
     font-size: 16px;
-    text-transform: uppercase;
-    background-color: #fff; }
-    .main-content .buttons .prev:before,
-    .main-content .buttons .next:before {
-      content: '';
-      position: absolute;
-      display: block;
-      width: 10px;
-      height: 10px;
-      top: 7px;
-      left: -10px;
-      transform: rotate(45deg);
-      border-bottom: #000 1px solid;
-      border-left: #000 1px solid; }
-  .main-content .buttons .next:before {
-    left: 100%;
-    border: none;
-    border-right: #000 1px solid;
-    border-top: #000 1px solid; }
-  .main-content .buttons .button-close {
-    position: relative;
-    width: 25px;
-    height: 25px;
-    border: none;
-    outline: none;
-    background-color: #000; }
-    .main-content .buttons .button-close:after, .main-content .buttons .button-close:before {
-      content: '';
-      position: absolute;
-      display: block;
-      top: 10px;
-      left: -1px;
-      width: 27px;
-      height: 5px;
+    color: #0c4ca3; }
+    .main-content .client-information .title-list {
+      margin-bottom: 20px;
+      text-align: left;
+      color: #ef4136; }
+      .main-content .client-information .title-list h1,
+      .main-content .client-information .title-list p {
+        margin: 0; }
+      .main-content .client-information .title-list h1 {
+        font-weight: 700;
+        font-size: 34px; }
+      .main-content .client-information .title-list p {
+        font-size: 26px; }
+    .main-content .client-information p {
+      margin: 0 0 70px 0; }
+    .main-content .client-information ul {
+      margin-bottom: 40px; }
+  .main-content .logo-client {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    background: url(../images/7.png) center no-repeat;
+    background-size: 100%; }
+  .main-content .buttons {
+    padding: 38px 0; }
+    .main-content .buttons.flex-container {
+      flex-flow: row nowrap;
+      justify-content: space-between; }
+    .main-content .buttons .prev,
+    .main-content .buttons .next {
+      position: relative;
+      border: none;
+      outline: none;
+      font-weight: 700;
+      font-size: 16px;
+      text-transform: uppercase;
       background-color: #fff; }
-    .main-content .buttons .button-close:before {
-      transform: rotate(90deg); }
+      .main-content .buttons .prev:before,
+      .main-content .buttons .next:before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 10px;
+        height: 10px;
+        top: 7px;
+        left: -10px;
+        transform: rotate(45deg);
+        border-bottom: #000 1px solid;
+        border-left: #000 1px solid; }
+    .main-content .buttons .next:before {
+      left: 100%;
+      border: none;
+      border-right: #000 1px solid;
+      border-top: #000 1px solid; }
+    .main-content .buttons .button-close {
+      position: relative;
+      width: 25px;
+      height: 25px;
+      border: none;
+      outline: none;
+      background-color: #000; }
+      .main-content .buttons .button-close:after, .main-content .buttons .button-close:before {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 10px;
+        left: -1px;
+        width: 27px;
+        height: 5px;
+        background-color: #fff; }
+      .main-content .buttons .button-close:before {
+        transform: rotate(90deg); }
 
 .client-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   padding: 38px 0;
   background-color: #0c4ca3; }
   .client-footer .flex-item a {
@@ -595,43 +610,26 @@ p {
 
 .shcedro .main-content .title-list {
   color: #dc1625; }
-.shcedro .logo-client {
-  background: red url(../images/1.png) center no-repeat;
-  background-size: 100%; }
 
 .market .main-content .title-list {
   color: #dc1625; }
-.market .logo-client {
-  background: #fff900 url(../images/2.png) center no-repeat; }
 
 .tavriya .main-content .title-list {
   color: #d57335; }
-.tavriya .logo-client {
-  background: url(../images/3.png) center no-repeat; }
 
 .bic .main-content .title-list {
   color: #ffb636; }
-.bic .logo-client {
-  background: url(../images/4.png) center no-repeat; }
 
 .prostor .main-content .title-list {
   color: #ed008c; }
-.prostor .logo-client {
-  background: url(../images/5.png) center no-repeat; }
 
 .farming .main-content .title-list {
   color: #59bc55; }
-.farming .logo-client {
-  background: #59bc55 url(../images/6.png) center no-repeat; }
 
 .meat .main-content .title-list {
   color: #ef4e22; }
-.meat .logo-client {
-  background: url(../images/7.png) center no-repeat; }
 
 .antoshka .main-content .title-list {
   color: #ef4e22; }
-.antoshka .logo-client {
-  background: #ef4136 url(../images/8.png) center no-repeat; }
 
 /*# sourceMappingURL=style.css.map */
