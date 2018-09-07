@@ -394,12 +394,12 @@ p {
     background: url(../images/6.png) center no-repeat;
     background-size: 100%; }
 .clients .client--meat .front {
-  background: url(../images/7.png) 0 0 no-repeat;
-  background-size: 102%; }
+  background: url(../images/7.jpg) 0 0 no-repeat;
+  background-size: 100% 100%; }
 .clients .client--meat .back {
   background-color: red; }
   .clients .client--meat .back .customer-logo {
-    background: url(../images/7.png) center no-repeat;
+    background: url(../images/7.jpg) center no-repeat;
     background-size: 100%; }
 .clients .client--antoshka .front {
   background: url(../images/8.png) 0 0 no-repeat;
@@ -519,6 +519,9 @@ p {
     padding: 10px;
     font-size: 16px;
     color: #0c4ca3; }
+    @media (max-width: 768px) {
+      .main-content .client-information {
+        max-width: 100%; } }
     .main-content .client-information .title-list {
       margin-bottom: 20px;
       text-align: left;
@@ -533,14 +536,24 @@ p {
         font-size: 26px; }
     .main-content .client-information p {
       margin: 0 0 70px 0; }
+      @media (max-width: 768px) {
+        .main-content .client-information p {
+          margin: 10px; } }
     .main-content .client-information ul {
       margin-bottom: 40px; }
+      @media (max-width: 768px) {
+        .main-content .client-information ul {
+          margin: 0; } }
   .main-content .logo-client {
     width: 100%;
     max-width: 600px;
     height: auto;
-    background: url(../images/7.png) center no-repeat;
+    background: url(../images/7.jpg) center no-repeat;
     background-size: 100%; }
+    @media (max-width: 768px) {
+      .main-content .logo-client {
+        max-width: 100%;
+        height: 200px; } }
   .main-content .buttons {
     padding: 38px 0; }
     .main-content .buttons.flex-container {
