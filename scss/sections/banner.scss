@@ -3,19 +3,27 @@
   color: #fff;
   background: url("../images/banner-bg.jpg") center no-repeat;
   background-size: cover;
-  text-shadow: 0px 3px 4px rgb(11, 32, 72);
+  text-shadow: 0 3px 4px rgb(11, 32, 72);
+  @media (max-width: 768px) {
+    padding: 0 15px;
+  }
 
   &-title {
     margin: 85px 0 40px 0;
     font-size: 33px;
     font-weight: bold;
     text-transform: uppercase;
+    @media (max-width: 768px) {
+      margin: 50px 0 30px 0;
+    }
   }
 
   &-item {
     margin-bottom: 180px;
     font-size: 26px;
+    @media (max-width: 768px) {
+      margin-bottom: 80px;
+      font-size: 18px;
+    }
   }
-
-
 }

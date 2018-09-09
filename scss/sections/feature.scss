@@ -1,10 +1,13 @@
 .feature {
   padding-bottom: 40px;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+
   &-list {
     padding: 0;
     margin: 0;
-    list-style: none  ;
-
+    list-style: none;
   }
 
   &-item {
@@ -14,6 +17,10 @@
     font-weight: 700;
     font-size: 19px;
     color: $brand-color-text;
+    @media (max-width: 768px) {
+      padding: 25px 0 0 0;
+      font-size: 16px;
+    }
 
     &:before {
       content: '';
@@ -26,6 +33,11 @@
       top: 5px;
       width: 17px;
       height: 17px;
+      @media (max-width: 768px) {
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 
