@@ -8,6 +8,12 @@
   height: 100%;
   background-color: #fff;
   transition: 1s;
+  @media (max-width: 768px) {
+    header,
+    footer {
+      display: none;
+    }
+  }
 
   .container {
     height: 100%;
