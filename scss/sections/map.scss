@@ -170,6 +170,9 @@
       width: 60%;
       margin: 0 auto;
     }
+    @media (max-width: 768px) {
+      width: 90%;
+    }
   }
 
   .quantity-promoters {
@@ -180,7 +183,9 @@
       margin: 0 auto 70px auto;
     }
     @media (max-width: 768px) {
+      max-width: 400px;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     .promoter-item {
@@ -193,8 +198,8 @@
       text-transform: uppercase;
       font-weight: 700;
       @media (max-width: 768px) {
-        width: 46%;
         flex: none;
+        width: 46%;
       }
 
       .region,

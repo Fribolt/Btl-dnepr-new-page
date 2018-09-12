@@ -310,6 +310,9 @@ p {
         display: block;
         width: 60%;
         margin: 0 auto; } }
+    @media (max-width: 768px) {
+      .map .static-map {
+        width: 90%; } }
   .map .quantity-promoters {
     display: none; }
     @media (max-width: 1345px) {
@@ -319,7 +322,9 @@ p {
         margin: 0 auto 70px auto; } }
     @media (max-width: 768px) {
       .map .quantity-promoters {
-        flex-wrap: wrap; } }
+        max-width: 400px;
+        flex-wrap: wrap;
+        justify-content: center; } }
     .map .quantity-promoters .promoter-item {
       display: flex;
       flex-direction: column;
@@ -331,8 +336,8 @@ p {
       font-weight: 700; }
       @media (max-width: 768px) {
         .map .quantity-promoters .promoter-item {
-          width: 46%;
-          flex: none; } }
+          flex: none;
+          width: 46%; } }
       .map .quantity-promoters .promoter-item .region,
       .map .quantity-promoters .promoter-item .quantity {
         width: 100%;
@@ -618,6 +623,9 @@ p {
   flex-direction: column;
   justify-content: space-around; }
   @media (max-width: 768px) {
+    .main-content {
+      height: 100%; } }
+  @media (max-width: 768px) {
     .main-content .flex-container {
       flex-flow: column-reverse nowrap; } }
   .main-content .client-information {
@@ -628,7 +636,8 @@ p {
     color: #0c4ca3; }
     @media (max-width: 768px) {
       .main-content .client-information {
-        max-width: 100%; } }
+        max-width: 100%;
+        font-size: 14px; } }
     .main-content .client-information .title-list {
       margin-bottom: 20px;
       text-align: left;
@@ -639,8 +648,14 @@ p {
       .main-content .client-information .title-list h1 {
         font-weight: 700;
         font-size: 34px; }
+        @media (max-width: 768px) {
+          .main-content .client-information .title-list h1 {
+            font-size: 20px; } }
       .main-content .client-information .title-list p {
         font-size: 26px; }
+        @media (max-width: 768px) {
+          .main-content .client-information .title-list p {
+            font-size: 14px; } }
     .main-content .client-information p {
       margin: 0 0 70px 0; }
       @media (max-width: 768px) {
@@ -663,6 +678,9 @@ p {
         height: 200px; } }
   .main-content .buttons {
     padding: 38px 0; }
+    @media (max-width: 768px) {
+      .main-content .buttons {
+        padding: 5px 0; } }
     .main-content .buttons.flex-container {
       flex-flow: row nowrap;
       justify-content: space-between; }
@@ -675,6 +693,10 @@ p {
       font-size: 16px;
       text-transform: uppercase;
       background-color: #fff; }
+      @media (max-width: 768px) {
+        .main-content .buttons .prev,
+        .main-content .buttons .next {
+          font-size: 12px; } }
       .main-content .buttons .prev:before,
       .main-content .buttons .next:before {
         content: '';
