@@ -1,0 +1,324 @@
+.pop-up-client {
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transition: 1s;
+  @media (max-width: 768px) {
+    header,
+    footer {
+      display: none;
+    }
+  }
+
+  .container {
+    height: 100%;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  .client-header {
+    background-color: #fff;
+
+    .logo {
+      margin: 0;
+      padding: 40px 70px;
+    }
+
+    .menu-list {
+      margin-top: 35px;
+
+      .menu-item {
+        padding: 5px 15px;
+      }
+    }
+  }
+
+}
+
+.main-content {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  @media (max-width: 568px) {
+    height: 100%;
+  }
+
+  .flex-container {
+    @media (max-width: 768px) {
+      flex-flow: column-reverse nowrap;
+    }
+  }
+
+  .client-information {
+    max-width: 470px;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 16px;
+    color: #0c4ca3;
+    @media (max-width: 768px) {
+      max-width: 100%;
+      font-size: 14px;
+    }
+
+    .title-list {
+      margin-bottom: 20px;
+      text-align: left;
+      color: #ef4136;
+
+      h1,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        font-weight: 700;
+        font-size: 34px;
+        @media (max-width: 768px) {
+          font-size: 20px;
+        }
+      }
+
+      p {
+        font-size: 26px;
+        @media (max-width: 768px) {
+          font-size: 14px;
+        }
+      }
+    }
+
+    p {
+      margin: 0 0 70px 0;
+      @media (max-width: 768px) {
+        margin: 10px;
+      }
+    }
+
+    ul {
+      margin-bottom: 40px;
+      @media (max-width: 768px) {
+        margin: 0;
+      }
+    }
+    
+  }
+
+  .container-logo {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    background-color: red;
+    @media (max-width: 768px) {
+      max-width: 100%;
+      height: 200px;
+    }
+  }
+
+  .logo-client {
+    width: 300px;
+    height: 180px;
+    margin: auto;
+    @media (max-width: 568px) {
+      width: 180px;
+      height: auto;
+    }
+  }
+
+  .buttons {
+    padding: 38px 0;
+    @media (max-width: 768px) {
+      padding: 5px 0;
+    }
+
+    &.flex-container {
+      flex-flow: row nowrap;
+      justify-content: space-between;
+    }
+
+    .prev,
+    .next {
+      position: relative;
+      border: none;
+      outline: none;
+      font-weight: 700;
+      font-size: 16px;
+      text-transform: uppercase;
+      background-color: #fff;
+      @media (max-width: 768px) {
+        font-size: 12px;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 10px;
+        height: 10px;
+        top: 7px;
+        left: -10px;
+        transform: rotate(45deg);
+        border-bottom: #000 1px solid;
+        border-left: #000 1px solid;
+      }
+    }
+
+    .next {
+      &:before {
+        left: 100%;
+        border: none;
+        border-right: #000 1px solid;
+        border-top: #000 1px solid;
+      }
+    }
+
+    .button-close {
+      position: relative;
+      width: 25px;
+      height: 25px;
+      border: none;
+      outline: none;
+      background-color: #000;
+
+      &:after,
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 10px;
+        left: -1px;
+        width: 27px;
+        height: 5px;
+        background-color: #fff;
+      }
+
+      &:before {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+.client-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 38px 0;
+  background-color: $brand-color-text;
+
+  .flex-item {
+    a {
+      display: block;
+      margin-bottom: 14px;
+      font-weight: 700;
+      font-size: 26px;
+      color: #fff;
+    }
+  }
+
+  .button-container {
+    background: #0d59c1;
+    border: 1px solid #fff;
+    box-shadow: none;
+  }
+}
+
+.shcedro {
+  .main-content {
+    .title-list {
+      color: #dc1625;
+    }
+  }
+}
+
+.market {
+  .main-content {
+    .title-list {
+      color: #dc1625;
+    }
+
+    .container-logo {
+      background-color: #fff900;
+    }
+  }
+}
+
+.tavriya {
+  .main-content {
+    .title-list {
+      color: #d57335;
+    }
+
+    .container-logo {
+      background-color: brown;
+    }
+  }
+}
+
+.bic {
+  .main-content {
+    .title-list {
+      color: #ffb636;
+    }
+
+    .container-logo {
+      background-color: #fff;
+    }
+  }
+}
+
+.prostor {
+  .main-content {
+    .title-list {
+      color: #ed008c;
+    }
+
+    .container-logo {
+      background-color: #fff;
+    }
+  }
+}
+
+.farming {
+  .main-content {
+    .title-list {
+      color: #59bc55;
+    }
+
+    .container-logo {
+      background-color: #59bc55;
+    }
+  }
+}
+
+.meat {
+  .main-content {
+    .title-list {
+      color: #ef4e22;
+    }
+
+    .container-logo {
+      background-color: #ef4e22;
+    }
+  }
+}
+.antoshka {
+  .main-content {
+    .title-list {
+      color: #ef4e22;
+    }
+
+    .container-logo {
+      background-color: #ef4136;
+    }
+  }
+}
+

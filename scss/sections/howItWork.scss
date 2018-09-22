@@ -1,0 +1,61 @@
+.how-it-work {
+  padding-bottom: 40px;
+  background-color: #59bc55;
+
+  h2 {
+    color: #fff;
+  }
+
+  &-list {
+    display: flex;
+    justify-content: space-around;
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+  }
+
+  &-item {
+    position: relative;
+    flex: 1;
+    margin: 5px;
+    padding-top: 160px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: $brand-color-text;
+    background-repeat: no-repeat;
+    background-position: top center;
+    @media (max-width: 1200px) {
+      font-size: 14px;
+    }
+    @media (max-width: 768px) {
+      width: 46%;
+      flex: none;
+    }
+  }
+
+  .questionnaires {
+    background-image: url("../images/questionnaires.png");
+  }
+
+  .research {
+    background-image: url("../images/research.png");
+  }
+
+  .promoter {
+    background-image: url("../images/promoter.png");
+    background-size: 157px;
+  }
+
+  .data {
+    background-image: url("../images/data.png");
+  }
+
+  .recommendations   {
+    background-image: url("../images/recommendations.png");
+    @media (max-width: 1200px) {
+    }
+  }
+}

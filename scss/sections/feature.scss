@@ -1,0 +1,44 @@
+.feature {
+  padding-bottom: 40px;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+
+  &-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 25px;
+    font-weight: 700;
+    font-size: 19px;
+    color: $brand-color-text;
+    @media (max-width: 768px) {
+      padding: 25px 0 0 0;
+      font-size: 16px;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      border: 3px solid #1a57a8;
+      border-radius: 50%;
+      background-color: rgb(255, 255, 255);
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 17px;
+      height: 17px;
+      @media (max-width: 768px) {
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+}

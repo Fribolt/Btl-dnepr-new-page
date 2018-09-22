@@ -1,0 +1,201 @@
+.clients {
+
+  &-list {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    max-width: 1030px;
+    margin: 0 auto;
+    @media (max-width: 1200px) {
+      justify-content: center;
+    }
+  }
+
+  &-item {
+    width: 342px;
+    height: 300px;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+    @media (max-width: 768px) {
+      width: 160px;
+      height: 140px;
+    }
+
+    .business-card {
+      height: 100%;
+      position: relative;
+      transition: 1.6s;
+      transform-style: preserve-3d;
+      transform-origin: center 160px;
+
+      &:hover {
+        transform: rotateY(180deg);
+        @media (max-width: 768px) {
+          transform: none;
+        }
+      }
+    }
+
+    .front,
+    .back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+     .back {
+       padding: 25px 25px 0;
+       transform: rotateY(180deg);
+     }
+
+    .business-card {
+      .customer-logo {
+        width: 130px;
+        height: 85px;
+        margin-bottom: 15px;
+
+      }
+
+      .customer-information {
+        p {
+          margin: 0;
+          text-align: left;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .client--shcedro {
+    .front {
+      background: red url(../images/logo/schedro.png) center no-repeat;
+      background-size: 100%;
+    }
+
+    .back {
+      background-color: red;
+      
+      .customer-logo {
+        background: red url(../images/logo/schedro.png) center no-repeat;
+        background-size: 100%;
+      }
+    }
+  }
+
+  .client--market {
+    .front {
+      background: #fff900 url(../images/logo/kovbas-market.svg) center no-repeat;
+      background-size: 60%;
+    }
+
+    .back {
+      background-color: red;
+
+      .customer-logo {
+        background: #fff900 url(../images/logo/kovbas-market.svg) center no-repeat;
+        background-size:60%;
+      }
+    }
+  }
+
+  .client--tavriya {
+    .front {
+      background: brown url(../images/logo/tavriya.png) center no-repeat;
+      background-size: 80%;
+    }
+
+    .back {
+      background-color: brown;
+
+      .customer-logo {
+        background: url(../images/logo/tavriya.png) center no-repeat;
+        background-size: 100%;
+      }
+    }
+  }
+
+  .client--bic {
+    .front {
+      background: url(../images/logo/bic.svg) center no-repeat;
+      background-size: 100%;
+    }
+
+    .back {
+      background-color: #ffb636;
+
+      .customer-logo {
+        background: url(../images/logo/bic.svg) center no-repeat;
+        background-size: 100%;
+      }
+    }
+  }
+
+  .client--prostor {
+    .front {
+      background: url(../images/logo/prostor.png) center no-repeat;
+      background-size: 100%;
+    }
+
+    .back {
+      background-color: #9a3597;
+
+      .customer-logo {
+        background: url(../images/logo/prostor.png) center no-repeat;
+        background-size: 100%;
+      }
+    }
+  }
+
+  .client--farming {
+    .front {
+      background: #59bc55 url(../images/logo/farm.png) center no-repeat;
+      background-size: 100%;
+    }
+
+    .back {
+      background-color: #ca7326;
+
+      .customer-logo {
+        background: #59bc55 url(../images/logo/farm.png) center no-repeat;
+        background-size: 100%;
+      }
+    }
+  }
+
+  .client--meat {
+    .front {
+      background: #ef4e22 url(../images/logo/meat-house.jpg) center no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .back {
+      background-color: red;
+
+      .customer-logo {
+        background: #ef4e22 url(../images/logo/meat-house.jpg) center no-repeat;
+        background-size: 100%;
+      }
+    }
+  }
+
+  .client--antoshka {
+    .front {
+      background: url(../images/logo/antoshka.png) center no-repeat;
+      background-size: 100%;
+    }
+
+    .back {
+      background-color: red;
+
+      .customer-logo {
+        background: url(../images/logo/antoshka.png) center no-repeat;
+        background-size: 100%;
+      }
+    }
+  }
+}

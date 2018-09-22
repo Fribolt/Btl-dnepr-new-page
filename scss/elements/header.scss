@@ -1,0 +1,42 @@
+.logo {
+  display: block;
+  max-width: 260px;
+  padding: 40px 0;
+  margin: 20px auto;
+  text-indent: -99999px;
+  background: url("../images/LOGO.png") center no-repeat;
+  background-size: 100%;
+
+  &-container {
+    margin: 20px 0;
+  }
+}
+
+.header {
+  &-phone {
+    display: block;
+    margin: 20px 0 20px 0;
+    text-align: right;
+    font-weight: 700;
+    font-size: 24px;
+    color: $brand-color-text;
+    @media (max-width: 768px) {
+      margin: 0;
+      text-align: center;
+    }
+  }
+
+  .row {
+    @media (max-width: 992px) {
+      display: flex;
+      align-items: center;
+
+      :first-child {
+        flex: 1;
+      }
+    }
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+}
