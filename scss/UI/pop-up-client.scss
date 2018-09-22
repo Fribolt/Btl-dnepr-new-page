@@ -49,7 +49,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  @media (max-width: 768px) {
+  @media (max-width: 568px) {
     height: 100%;
   }
 
@@ -112,15 +112,24 @@
     
   }
 
-  .logo-client {
+  .container-logo {
     width: 100%;
     max-width: 600px;
-    height: auto;
-    background: url(../images/7.jpg) center no-repeat;
-    background-size: 100%;
+    display: flex;
+    background-color: red;
     @media (max-width: 768px) {
       max-width: 100%;
       height: 200px;
+    }
+  }
+
+  .logo-client {
+    width: 300px;
+    height: 180px;
+    margin: auto;
+    @media (max-width: 568px) {
+      width: 180px;
+      height: auto;
     }
   }
 
@@ -235,6 +244,10 @@
     .title-list {
       color: #dc1625;
     }
+
+    .container-logo {
+      background-color: #fff900;
+    }
   }
 }
 
@@ -242,6 +255,10 @@
   .main-content {
     .title-list {
       color: #d57335;
+    }
+
+    .container-logo {
+      background-color: brown;
     }
   }
 }
@@ -251,6 +268,10 @@
     .title-list {
       color: #ffb636;
     }
+
+    .container-logo {
+      background-color: #fff;
+    }
   }
 }
 
@@ -258,6 +279,10 @@
   .main-content {
     .title-list {
       color: #ed008c;
+    }
+
+    .container-logo {
+      background-color: #fff;
     }
   }
 }
@@ -267,6 +292,10 @@
     .title-list {
       color: #59bc55;
     }
+
+    .container-logo {
+      background-color: #59bc55;
+    }
   }
 }
 
@@ -275,12 +304,20 @@
     .title-list {
       color: #ef4e22;
     }
+
+    .container-logo {
+      background-color: #ef4e22;
+    }
   }
 }
 .antoshka {
   .main-content {
     .title-list {
       color: #ef4e22;
+    }
+
+    .container-logo {
+      background-color: #ef4136;
     }
   }
 }

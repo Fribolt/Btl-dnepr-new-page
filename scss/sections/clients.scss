@@ -73,7 +73,7 @@
 
   .client--shcedro {
     .front {
-      background: red url(../images/1.png) center no-repeat;
+      background: red url(../images/logo/schedro.png) center no-repeat;
       background-size: 100%;
     }
 
@@ -81,7 +81,7 @@
       background-color: red;
       
       .customer-logo {
-        background: red url(../images/1.png) center no-repeat;
+        background: red url(../images/logo/schedro.png) center no-repeat;
         background-size: 100%;
       }
     }
@@ -89,31 +89,31 @@
 
   .client--market {
     .front {
-      background: url(../images/2.png) 0 0 no-repeat;
-      background-size: 100%;
+      background: #fff900 url(../images/logo/kovbas-market.svg) center no-repeat;
+      background-size: 60%;
     }
 
     .back {
       background-color: red;
 
       .customer-logo {
-        background: url(../images/2.png) center no-repeat;
-        background-size: 100%;
+        background: #fff900 url(../images/logo/kovbas-market.svg) center no-repeat;
+        background-size:60%;
       }
     }
   }
 
   .client--tavriya {
     .front {
-      background: url(../images/3.png) 0 0 no-repeat;
-      background-size: 100%;
+      background: brown url(../images/logo/tavriya.png) center no-repeat;
+      background-size: 80%;
     }
 
     .back {
       background-color: brown;
 
       .customer-logo {
-        background: url(../images/3.png) center no-repeat;
+        background: url(../images/logo/tavriya.png) center no-repeat;
         background-size: 100%;
       }
     }
@@ -121,7 +121,7 @@
 
   .client--bic {
     .front {
-      background: url(../images/4.png) 0 0 no-repeat;
+      background: url(../images/logo/bic.svg) center no-repeat;
       background-size: 100%;
     }
 
@@ -129,7 +129,7 @@
       background-color: #ffb636;
 
       .customer-logo {
-        background: url(../images/4.png) center no-repeat;
+        background: url(../images/logo/bic.svg) center no-repeat;
         background-size: 100%;
       }
     }
@@ -137,7 +137,7 @@
 
   .client--prostor {
     .front {
-      background: url(../images/5.png) 0 0 no-repeat;
+      background: url(../images/logo/prostor.png) center no-repeat;
       background-size: 100%;
     }
 
@@ -145,7 +145,7 @@
       background-color: #9a3597;
 
       .customer-logo {
-        background: url(../images/5.png) center no-repeat;
+        background: url(../images/logo/prostor.png) center no-repeat;
         background-size: 100%;
       }
     }
@@ -153,7 +153,7 @@
 
   .client--farming {
     .front {
-      background: url(../images/6.png) 0 0 no-repeat;
+      background: #59bc55 url(../images/logo/farm.png) center no-repeat;
       background-size: 100%;
     }
 
@@ -161,7 +161,7 @@
       background-color: #ca7326;
 
       .customer-logo {
-        background: url(../images/6.png) center no-repeat;
+        background: #59bc55 url(../images/logo/farm.png) center no-repeat;
         background-size: 100%;
       }
     }
@@ -169,7 +169,7 @@
 
   .client--meat {
     .front {
-      background: url(../images/7.jpg) 0 0 no-repeat;
+      background: #ef4e22 url(../images/logo/meat-house.jpg) center no-repeat;
       background-size: 100% 100%;
     }
 
@@ -177,7 +177,7 @@
       background-color: red;
 
       .customer-logo {
-        background: url(../images/7.jpg) center no-repeat;
+        background: #ef4e22 url(../images/logo/meat-house.jpg) center no-repeat;
         background-size: 100%;
       }
     }
@@ -185,7 +185,7 @@
 
   .client--antoshka {
     .front {
-      background: url(../images/8.png) 0 0 no-repeat;
+      background: url(../images/logo/antoshka.png) center no-repeat;
       background-size: 100%;
     }
 
@@ -193,7 +193,7 @@
       background-color: red;
 
       .customer-logo {
-        background: url(../images/8.png) center no-repeat;
+        background: url(../images/logo/antoshka.png) center no-repeat;
         background-size: 100%;
       }
     }

@@ -412,68 +412,68 @@ p {
     text-align: left;
     color: #fff; }
 .clients .client--shcedro .front {
-  background: red url(../images/1.png) center no-repeat;
+  background: red url(../images/logo/schedro.png) center no-repeat;
   background-size: 100%; }
 .clients .client--shcedro .back {
   background-color: red; }
   .clients .client--shcedro .back .customer-logo {
-    background: red url(../images/1.png) center no-repeat;
+    background: red url(../images/logo/schedro.png) center no-repeat;
     background-size: 100%; }
 .clients .client--market .front {
-  background: url(../images/2.png) 0 0 no-repeat;
-  background-size: 100%; }
+  background: #fff900 url(../images/logo/kovbas-market.svg) center no-repeat;
+  background-size: 60%; }
 .clients .client--market .back {
   background-color: red; }
   .clients .client--market .back .customer-logo {
-    background: url(../images/2.png) center no-repeat;
-    background-size: 100%; }
+    background: #fff900 url(../images/logo/kovbas-market.svg) center no-repeat;
+    background-size: 60%; }
 .clients .client--tavriya .front {
-  background: url(../images/3.png) 0 0 no-repeat;
-  background-size: 100%; }
+  background: brown url(../images/logo/tavriya.png) center no-repeat;
+  background-size: 80%; }
 .clients .client--tavriya .back {
   background-color: brown; }
   .clients .client--tavriya .back .customer-logo {
-    background: url(../images/3.png) center no-repeat;
+    background: url(../images/logo/tavriya.png) center no-repeat;
     background-size: 100%; }
 .clients .client--bic .front {
-  background: url(../images/4.png) 0 0 no-repeat;
+  background: url(../images/logo/bic.svg) center no-repeat;
   background-size: 100%; }
 .clients .client--bic .back {
   background-color: #ffb636; }
   .clients .client--bic .back .customer-logo {
-    background: url(../images/4.png) center no-repeat;
+    background: url(../images/logo/bic.svg) center no-repeat;
     background-size: 100%; }
 .clients .client--prostor .front {
-  background: url(../images/5.png) 0 0 no-repeat;
+  background: url(../images/logo/prostor.png) center no-repeat;
   background-size: 100%; }
 .clients .client--prostor .back {
   background-color: #9a3597; }
   .clients .client--prostor .back .customer-logo {
-    background: url(../images/5.png) center no-repeat;
+    background: url(../images/logo/prostor.png) center no-repeat;
     background-size: 100%; }
 .clients .client--farming .front {
-  background: url(../images/6.png) 0 0 no-repeat;
+  background: #59bc55 url(../images/logo/farm.png) center no-repeat;
   background-size: 100%; }
 .clients .client--farming .back {
   background-color: #ca7326; }
   .clients .client--farming .back .customer-logo {
-    background: url(../images/6.png) center no-repeat;
+    background: #59bc55 url(../images/logo/farm.png) center no-repeat;
     background-size: 100%; }
 .clients .client--meat .front {
-  background: url(../images/7.jpg) 0 0 no-repeat;
+  background: #ef4e22 url(../images/logo/meat-house.jpg) center no-repeat;
   background-size: 100% 100%; }
 .clients .client--meat .back {
   background-color: red; }
   .clients .client--meat .back .customer-logo {
-    background: url(../images/7.jpg) center no-repeat;
+    background: #ef4e22 url(../images/logo/meat-house.jpg) center no-repeat;
     background-size: 100%; }
 .clients .client--antoshka .front {
-  background: url(../images/8.png) 0 0 no-repeat;
+  background: url(../images/logo/antoshka.png) center no-repeat;
   background-size: 100%; }
 .clients .client--antoshka .back {
   background-color: red; }
   .clients .client--antoshka .back .customer-logo {
-    background: url(../images/8.png) center no-repeat;
+    background: url(../images/logo/antoshka.png) center no-repeat;
     background-size: 100%; }
 
 .contacts {
@@ -622,7 +622,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-around; }
-  @media (max-width: 768px) {
+  @media (max-width: 568px) {
     .main-content {
       height: 100%; } }
   @media (max-width: 768px) {
@@ -666,16 +666,23 @@ p {
       @media (max-width: 768px) {
         .main-content .client-information ul {
           margin: 0; } }
-  .main-content .logo-client {
+  .main-content .container-logo {
     width: 100%;
     max-width: 600px;
-    height: auto;
-    background: url(../images/7.jpg) center no-repeat;
-    background-size: 100%; }
+    display: flex;
+    background-color: red; }
     @media (max-width: 768px) {
-      .main-content .logo-client {
+      .main-content .container-logo {
         max-width: 100%;
         height: 200px; } }
+  .main-content .logo-client {
+    width: 300px;
+    height: 180px;
+    margin: auto; }
+    @media (max-width: 568px) {
+      .main-content .logo-client {
+        width: 180px;
+        height: auto; } }
   .main-content .buttons {
     padding: 38px 0; }
     @media (max-width: 768px) {
@@ -755,23 +762,37 @@ p {
 
 .market .main-content .title-list {
   color: #dc1625; }
+.market .main-content .container-logo {
+  background-color: #fff900; }
 
 .tavriya .main-content .title-list {
   color: #d57335; }
+.tavriya .main-content .container-logo {
+  background-color: brown; }
 
 .bic .main-content .title-list {
   color: #ffb636; }
+.bic .main-content .container-logo {
+  background-color: #fff; }
 
 .prostor .main-content .title-list {
   color: #ed008c; }
+.prostor .main-content .container-logo {
+  background-color: #fff; }
 
 .farming .main-content .title-list {
   color: #59bc55; }
+.farming .main-content .container-logo {
+  background-color: #59bc55; }
 
 .meat .main-content .title-list {
   color: #ef4e22; }
+.meat .main-content .container-logo {
+  background-color: #ef4e22; }
 
 .antoshka .main-content .title-list {
   color: #ef4e22; }
+.antoshka .main-content .container-logo {
+  background-color: #ef4136; }
 
 /*# sourceMappingURL=style.css.map */
